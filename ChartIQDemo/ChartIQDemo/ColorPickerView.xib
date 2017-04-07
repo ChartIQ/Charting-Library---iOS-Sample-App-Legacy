@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bu7-Px-hSG" customClass="ColorPickerView" customModule="ChartIQDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="153" height="260"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StudyColorPickerBgTop" translatesAutoresizingMaskIntoConstraints="NO" id="0qz-sG-HZc">
+                    <rect key="frame" x="0.0" y="0.0" width="153" height="260"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SA6-iw-fjG">
+                    <rect key="frame" x="8" y="5" width="137" height="269"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="137" id="8z2-6T-3xE"/>
+                        <constraint firstAttribute="height" constant="269" id="ec7-35-RIc"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="2" id="g5i-s6-gxC">
+                        <size key="itemSize" width="25" height="25"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="Bu7-Px-hSG" id="dfm-yv-ABm"/>
+                        <outlet property="delegate" destination="Bu7-Px-hSG" id="MIa-E0-8tr"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0qz-sG-HZc" secondAttribute="trailing" id="3Xl-wi-fir"/>
+                <constraint firstItem="SA6-iw-fjG" firstAttribute="centerX" secondItem="Bu7-Px-hSG" secondAttribute="centerX" id="4IX-Na-6f8"/>
+                <constraint firstItem="SA6-iw-fjG" firstAttribute="top" secondItem="Bu7-Px-hSG" secondAttribute="top" constant="5" id="ge8-s7-6oM"/>
+                <constraint firstAttribute="bottom" secondItem="0qz-sG-HZc" secondAttribute="bottom" id="pDz-aQ-spU"/>
+                <constraint firstItem="0qz-sG-HZc" firstAttribute="leading" secondItem="Bu7-Px-hSG" secondAttribute="leading" id="prW-xw-MHy"/>
+                <constraint firstItem="0qz-sG-HZc" firstAttribute="top" secondItem="Bu7-Px-hSG" secondAttribute="top" id="zpe-8g-Ojn"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgImageView" destination="0qz-sG-HZc" id="YNf-X6-pKy"/>
+                <outlet property="collectionView" destination="SA6-iw-fjG" id="rUd-AG-GCE"/>
+                <outlet property="collectionViewTop" destination="ge8-s7-6oM" id="CBX-pv-0B7"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="StudyColorPickerBgTop" width="153" height="274"/>
+    </resources>
+</document>
