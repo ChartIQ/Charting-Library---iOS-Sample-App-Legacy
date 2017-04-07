@@ -1,0 +1,9 @@
+# Misc
+.project
+.DS_Store
+
+# Xcode
+*.xcscheme
+*.plist
+*.xcuserstate
+*.xcbkptlist
