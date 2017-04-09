@@ -1,0 +1,6 @@
+framework module Pods_ChartIQDemoTests {
+  umbrella header "Pods-ChartIQDemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

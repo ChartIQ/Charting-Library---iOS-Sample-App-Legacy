@@ -514,6 +514,7 @@ class ViewController: UIViewController {
 
 // MARK: - ChartIQDataSource
 
+// add comments for future developers
 extension ViewController: ChartIQDataSource {
     
     public func pullInitialData(by params: ChartIQQuoteFeedParams, completionHandler: @escaping ([ChartIQData]) -> Void) {
