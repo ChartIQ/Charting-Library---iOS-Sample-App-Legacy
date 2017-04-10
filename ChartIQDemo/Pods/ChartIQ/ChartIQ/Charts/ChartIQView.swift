@@ -152,11 +152,15 @@ public class ChartIQView: UIView {
     
     internal var webView: WKWebView!
     
-    static internal var url = "http://192.168.1.31:8080/3.0.0/default/template-basic.html"
-    static internal var refreshInterval = "0"
+    static internal var url = ""
+    static internal var refreshInterval = 0
     
     public static var chartIQUrl: String {
         return ChartIQView.url
+    }
+    
+    public static var getRefreshInterval: Int {
+        return ChartIQView.refreshInterval
     }
     
     static internal var sdkVersion: String {
@@ -519,6 +523,10 @@ public class ChartIQView: UIView {
         }
     }
     
+    public func setRefreshInterval(_ refreshInterval: Int) {
+        ChartIQView.refreshInterval = refreshInterval
+    }
+    
     // MARK: - Layout
     
     /// setup WKWebView
@@ -577,7 +585,7 @@ public class ChartIQView: UIView {
         _dataMethod = method
         addEvent("CHIQ_setDataMethod", parameters: ["method": method == .pull ? "PULL" : "PUSH"])
         if method == .pull {
-            let script = "attachQuoteFeed(" + ChartIQView.refreshInterval + ")";
+            let script = "attachQuoteFeed(\(ChartIQView.refreshInterval))";
             webView.evaluateJavaScript(script, completionHandler: nil)
         } else {
             let script = "callNewChart(); "

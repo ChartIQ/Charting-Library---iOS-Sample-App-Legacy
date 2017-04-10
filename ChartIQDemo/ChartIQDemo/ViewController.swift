@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     let defaultSymbol = "AAPL"
     let defaultPeriod = 1
     let defaultInterval = "day"
+    let refreshInterval = 1
     var colors = UIColor.colorsForColorPicker()
     var fillColors = UIColor.colorsForFillColorPicker()
     var periodButton: UIButton!
@@ -536,6 +537,7 @@ extension ViewController: ChartIQDelegate {
     
     func chartIQViewDidFinishLoading(_ chartIQView: ChartIQView) {
         func loadDefaultSymbol() {
+            chartIQView.setRefreshInterval(refreshInterval)
             chartIQView.setDataMethod(.pull)
             chartIQView.setSymbol("APPL")
         }

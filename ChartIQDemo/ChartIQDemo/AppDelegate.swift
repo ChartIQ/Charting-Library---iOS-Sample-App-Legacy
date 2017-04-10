@@ -13,7 +13,6 @@ import ChartIQ
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //let url = "http://sstest.rokolabs.com/chartiq/template.roko.v3.html"
     let url = "http://192.168.1.125:8080/3.0.0/default/template-basic.html"
     let apiKey = "JGPHS0Pk6St63QUBdHk5uVZDM11T2Z1d1/BFz9E8HyI="
 

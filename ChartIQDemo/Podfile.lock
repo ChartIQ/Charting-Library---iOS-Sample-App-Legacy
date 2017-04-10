@@ -1,21 +1,22 @@
 PODS:
-  - ChartIQ (1.0.0)
+  - ChartIQ (1.0.1)
 
 DEPENDENCIES:
-  - ChartIQ (from `https://github.com/ChartIQ/Charting-Library---iOS-SDK.git`)
+  - ChartIQ (from `https://github.com/ChartIQ/Charting-Library---iOS-SDK.git`, tag `1.0.1`)
 
 EXTERNAL SOURCES:
   ChartIQ:
     :git: https://github.com/ChartIQ/Charting-Library---iOS-SDK.git
+    :tag: 1.0.1
 
 CHECKOUT OPTIONS:
   ChartIQ:
-    :commit: 37efb76b38a8e07d545780b96336652fec21b2a7
     :git: https://github.com/ChartIQ/Charting-Library---iOS-SDK.git
+    :tag: 1.0.1
 
 SPEC CHECKSUMS:
-  ChartIQ: 763a0b6534382260c5edba75f6ef673df7fcf3d9
+  ChartIQ: ddb3b3cc8942b310cefea9eaeeb2b046ce24a9d4
 
-PODFILE CHECKSUM: 9d79be3b180b21c6cd94615153fccccaecf9991e
+PODFILE CHECKSUM: 91f22bf42151d25253b27046a040f8ed142da158
 
 COCOAPODS: 1.2.0
