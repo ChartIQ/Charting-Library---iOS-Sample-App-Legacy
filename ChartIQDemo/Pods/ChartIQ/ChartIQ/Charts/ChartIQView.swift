@@ -154,13 +154,10 @@ public class ChartIQView: UIView {
     
     static internal var url = ""
     static internal var refreshInterval = 0
+    static internal var voiceoverFields: [String: Bool] = [:]
     
     public static var chartIQUrl: String {
         return ChartIQView.url
-    }
-    
-    public static var getRefreshInterval: Int {
-        return ChartIQView.refreshInterval
     }
     
     static internal var sdkVersion: String {
@@ -168,6 +165,16 @@ public class ChartIQView: UIView {
             return version
         }
         return ""
+    }
+    
+    /// Quote Fields
+    public enum ChartIQQuoteFields: String {
+        case date = "Date"
+        case close = "Close"
+        case open = "Open"
+        case high = "High"
+        case low = "Low"
+        case volume = "Volume"
     }
     
     static internal let rokoMobiEventUrl = URL(string:"https://api.roko.mobi/v1/events/")!
@@ -294,6 +301,7 @@ public class ChartIQView: UIView {
         case pullPaginationData = "pullPaginationDataHandler"
         case layout = "layoutHandler"
         case drawing = "drawingHandler"
+        case accessibility = "accessibilityHandler"
     }
     
     internal static var isValidApiKey = false
@@ -527,6 +535,10 @@ public class ChartIQView: UIView {
         ChartIQView.refreshInterval = refreshInterval
     }
     
+    public func setVoiceoverFields(_ voiceoverFields: [String: Bool]) {
+        ChartIQView.voiceoverFields = voiceoverFields;
+    }
+    
     // MARK: - Layout
     
     /// setup WKWebView
@@ -535,9 +547,11 @@ public class ChartIQView: UIView {
         
         // Create the user content controller and add the script to it
         let userContentController = WKUserContentController()
+        
         userContentController.addUserScript(layoutScript)
         userContentController.addUserScript(drawingScript)
         
+        userContentController.add(self, name: ChartIQCallbackMessage.accessibility.rawValue)
         userContentController.add(self, name: ChartIQCallbackMessage.newSymbol.rawValue)
         userContentController.add(self, name: ChartIQCallbackMessage.pullInitialData.rawValue)
         userContentController.add(self, name: ChartIQCallbackMessage.pullUpdateData.rawValue)
@@ -659,6 +673,11 @@ public class ChartIQView: UIView {
     /// - Parameters:
     ///   - symbol: The symbol for the new chart - a symbol string
     public func setSymbol(_ symbol: String) {
+        if(UIAccessibilityIsVoiceOverRunning()) {
+            let source = "accessibilityMode();"
+            webView.evaluateJavaScript(source, completionHandler: nil)
+        }
+        
         let script = "callNewChart(\"\(symbol)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
         addEvent("CHIQ_setSymbol", parameters: ["symbol": symbol])
@@ -1233,6 +1252,53 @@ extension ChartIQView: WKScriptMessageHandler {
                     addEvent("CHIQ_drawingChange", parameters: ["json": formatObjectToPrintedJSONFormat(drawings)])
                 } catch {
                     print("Drawing callback fail")
+                }
+            }
+        case .accessibility:
+            if let quote = message.body as? String {
+                let fieldsArray = quote.components(separatedBy: "||")
+
+                if fieldsArray.count == 6 {
+                    let date = fieldsArray[0]
+                    let close = fieldsArray[1]
+                    let open = fieldsArray[2]
+                    let high = fieldsArray[3]
+                    let low = fieldsArray[4]
+                    let volume = fieldsArray[5]
+                    
+                    // the below is very clunky, find a better way in the future
+                    // maybe first idea of passing in fields to library instead 
+                    // of getting everything back
+                    var selectedFields = ""
+                    
+                    if ChartIQView.voiceoverFields[ChartIQQuoteFields.date.rawValue]! {
+                        selectedFields += ", " + date
+                    }
+                    
+                    if ChartIQView.voiceoverFields[ChartIQQuoteFields.close.rawValue]! {
+                        selectedFields += ", " + close
+                    }
+                    
+                    if ChartIQView.voiceoverFields[ChartIQQuoteFields.open.rawValue]! {
+                        selectedFields += ", " + open
+                    }
+                    
+                    if ChartIQView.voiceoverFields[ChartIQQuoteFields.high.rawValue]! {
+                        selectedFields += ", " + high
+                    }
+                    
+                    if ChartIQView.voiceoverFields[ChartIQQuoteFields.low.rawValue]! {
+                        selectedFields += ", " + low
+                    }
+                    
+                    if ChartIQView.voiceoverFields[ChartIQQuoteFields.volume.rawValue]! {
+                        selectedFields += ", " + volume
+                    }
+                    
+                    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, selectedFields);
+                } else {
+                    // field is missing, just quote the entire value
+                    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, quote);
                 }
             }
         }
