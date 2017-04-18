@@ -49,14 +49,6 @@ class ViewController: UIViewController {
     var selectedIntervalIndexPath = IndexPath(row: 0, section: 2)
     var selectedDrawTool: String?
     
-    // set field to true if voiceover mode needs to annouce the value
-    var voiceoverFields: [String: Bool] = ["Date": true,
-                                           "Close": true,
-                                           "Open": false,
-                                           "High": false,
-                                           "Low": false,
-                                           "Volume": false]
-    
     enum SegueIdentifier: String {
         case searchStudiesSegue = "SearchStudiesSegue"
         case drawOptionsSegue = "DrawOptionsSegue"
@@ -545,10 +537,22 @@ extension ViewController: ChartIQDelegate {
     
     func chartIQViewDidFinishLoading(_ chartIQView: ChartIQView) {
         func loadDefaultSymbol() {
-            chartIQView.setVoiceoverFields(voiceoverFields);
             chartIQView.setRefreshInterval(refreshInterval)
             chartIQView.setDataMethod(.pull)
             chartIQView.setSymbol(defaultSymbol)
+        }
+        
+        // load which fields you want to be announced when in accessibility mode
+        func loadVoiceoverFields() {
+            // set field to true if voiceover mode needs to announce the value
+            let voiceoverFields: [String: Bool] = [ChartIQView.ChartIQQuoteFields.date.rawValue: true,
+                                                   ChartIQView.ChartIQQuoteFields.close.rawValue: true,
+                                                   ChartIQView.ChartIQQuoteFields.open.rawValue: false,
+                                                   ChartIQView.ChartIQQuoteFields.high.rawValue: false,
+                                                   ChartIQView.ChartIQQuoteFields.low.rawValue: false,
+                                                   ChartIQView.ChartIQQuoteFields.volume.rawValue: false]
+            
+            chartIQView.setVoiceoverFields(voiceoverFields);
         }
         
         if let user = UserDefaults.standard.value(forKey: "SetUser") as? String {
@@ -558,6 +562,8 @@ extension ViewController: ChartIQDelegate {
         } else {
             loadDefaultSymbol()
         }
+        
+        loadVoiceoverFields()
     }
     
     func chartIQView(_ chartIQView: ChartIQView, didUpdateLayout layout: Any) {
