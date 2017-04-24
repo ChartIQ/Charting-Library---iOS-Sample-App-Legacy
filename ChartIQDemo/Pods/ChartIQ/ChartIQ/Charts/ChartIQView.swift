@@ -776,6 +776,10 @@ public class ChartIQView: UIView {
         return nil
     }
     
+    public func resizeChart() {
+        webView.evaluateJavaScript("resizeScreen();", completionHandler: nil)
+    }
+    
     /// Clears out a chart, eliminating all references including the resizeTimer, quoteDriver, styles and eventListeners
     public func clear() {
         let script = "stxx.destroy();"
