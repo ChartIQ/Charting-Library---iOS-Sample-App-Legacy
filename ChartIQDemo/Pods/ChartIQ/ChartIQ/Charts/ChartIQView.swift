@@ -310,7 +310,7 @@ public class ChartIQView: UIView {
     
     internal static var rokoMobiAuthorizaion = ""
     
-    public var disableAnalytics = false
+    internal static var disableAnalytics = false
     
     internal static let serverError = NSError(domain:"Server error.", code:0, userInfo:nil)
     
@@ -347,7 +347,13 @@ public class ChartIQView: UIView {
     public static func start(withAPIKey key: String, url: String) throws {
         ChartIQView.rokoMobiApiKey = key
         ChartIQView.url = url
-        try ChartIQView.addInitEvent()
+        
+        if(key.isEmpty) {
+            ChartIQView.disableAnalytics = true
+            ChartIQView.isValidApiKey = true
+        } else {
+            try ChartIQView.addInitEvent()
+        }
     }
     
     /// Sets your ROKO Mobi user
@@ -457,7 +463,7 @@ public class ChartIQView: UIView {
     ///   - name: The event name
     ///   - parameters: The event parameters
     public func addEvent(_ name: String, parameters: [String: String]? = nil) {
-        if !disableAnalytics || name == "_ROKO.Active User" || name == "_ROKO.Inactive User" {
+        if !ChartIQView.disableAnalytics || name == "_ROKO.Active User" || name == "_ROKO.Inactive User" {
             var request = URLRequest(url: ChartIQView.rokoMobiEventUrl)
             request.httpMethod = "POST"
             request.allHTTPHeaderFields = ChartIQView.getROKOMobiRequestHeader()
