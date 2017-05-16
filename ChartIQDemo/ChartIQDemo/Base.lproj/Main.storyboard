@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fct-E4-rZJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fct-E4-rZJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,7 +89,7 @@
                                         </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhw-Rt-nFN">
-                                        <rect key="frame" x="118" y="23" width="42" height="16"/>
+                                        <rect key="frame" x="118" y="22.5" width="42" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="42" id="0Ni-Sk-wIr"/>
                                         </constraints>
@@ -366,13 +366,13 @@
                                                 <rect key="frame" x="67.5" y="0.0" width="102" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="L" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIs-mN-dcr">
-                                                        <rect key="frame" x="42.5" y="14" width="6" height="13.5"/>
+                                                        <rect key="frame" x="42.5" y="13.5" width="6" height="13.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="11"/>
                                                         <color key="textColor" red="0.21176470589999999" green="0.50980392159999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="133" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekV-fg-yEo">
-                                                        <rect key="frame" x="54.5" y="14" width="18.5" height="13.5"/>
+                                                        <rect key="frame" x="54.5" y="13.5" width="18.5" height="13.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="11"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -391,13 +391,13 @@
                                                 <rect key="frame" x="169.5" y="0.0" width="102" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-qb-fQJ">
-                                                        <rect key="frame" x="39.5" y="14" width="8" height="13.5"/>
+                                                        <rect key="frame" x="39.5" y="13.5" width="8" height="13.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="11"/>
                                                         <color key="textColor" red="0.21176470589999999" green="0.50980392159999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="133" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-jW-1zK">
-                                                        <rect key="frame" x="53.5" y="14" width="18.5" height="13.5"/>
+                                                        <rect key="frame" x="53.5" y="13.5" width="18.5" height="13.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="11"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -522,10 +522,6 @@
                                     <constraint firstAttribute="trailing" secondItem="SZm-1v-gsZ" secondAttribute="trailing" constant="12" id="qqy-u0-CSZ"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Cs-ZAg">
-                                <rect key="frame" x="169" y="283" width="37" height="37"/>
-                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078431372548" green="0.12156862745098039" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -540,12 +536,10 @@
                             <constraint firstItem="yIX-y3-ire" firstAttribute="centerX" secondItem="deU-Jx-Qub" secondAttribute="centerX" id="Jeo-yQ-EzR"/>
                             <constraint firstItem="TgN-bM-rha" firstAttribute="top" secondItem="Hjz-nu-VSo" secondAttribute="bottom" id="LC5-e2-qqC"/>
                             <constraint firstItem="ome-vw-GON" firstAttribute="top" secondItem="nBq-5K-uWS" secondAttribute="bottom" constant="45" id="LeY-ne-XUJ"/>
-                            <constraint firstItem="sxo-Cs-ZAg" firstAttribute="centerY" secondItem="NcU-Nu-0b2" secondAttribute="centerY" id="O9m-zX-Ck8"/>
                             <constraint firstItem="ome-vw-GON" firstAttribute="leading" secondItem="NcU-Nu-0b2" secondAttribute="leading" constant="10" id="Oht-eq-WzI"/>
                             <constraint firstItem="ome-vw-GON" firstAttribute="centerX" secondItem="NcU-Nu-0b2" secondAttribute="centerX" id="SWU-IX-Zvy"/>
                             <constraint firstAttribute="trailing" secondItem="ISY-6R-Afp" secondAttribute="trailing" id="Ysf-JR-8Y3"/>
                             <constraint firstAttribute="trailing" secondItem="TgN-bM-rha" secondAttribute="trailing" id="bex-x2-Z2s"/>
-                            <constraint firstItem="sxo-Cs-ZAg" firstAttribute="centerX" secondItem="NcU-Nu-0b2" secondAttribute="centerX" id="brZ-F7-gj0"/>
                             <constraint firstItem="ISY-6R-Afp" firstAttribute="leading" secondItem="NcU-Nu-0b2" secondAttribute="leading" id="cCt-lN-47M"/>
                             <constraint firstItem="cKR-cz-sAj" firstAttribute="top" secondItem="Hjz-nu-VSo" secondAttribute="bottom" id="ch5-sO-XVx"/>
                             <constraint firstAttribute="trailing" secondItem="cKR-cz-sAj" secondAttribute="trailing" id="daP-jM-FO1"/>
@@ -598,7 +592,6 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicatorView" destination="sxo-Cs-ZAg" id="jDc-NV-H89"/>
                         <outlet property="chartIQView" destination="whL-j2-KiH" id="c8O-Ad-xZ3"/>
                         <outlet property="colorCollectionView" destination="69Z-zU-SvB" id="c1e-KD-XNG"/>
                         <outlet property="colorPickerView" destination="nBq-5K-uWS" id="Cjr-MG-dSv"/>

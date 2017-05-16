@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var chartIQView: ChartIQView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var periodMenuView: UIView!
     @IBOutlet weak var periodTableView: UITableView!
     @IBOutlet weak var crosshairHUDView: UIView!
@@ -242,7 +241,6 @@ class ViewController: UIViewController {
         // Sets chartIQ url
         viewController.urlDidChangeBlock = {[weak self] (url) in
             guard let strongSelf = self else { return }
-            strongSelf.activityIndicatorView.startAnimating()
             strongSelf.chartIQView.setChartIQUrl(url)
         }
     }
@@ -347,7 +345,6 @@ class ViewController: UIViewController {
 
     
     func loadChartInitialData(symbol: String, period: Int, interval: String, completionHandler: @escaping ([ChartIQData]) -> Void) {
-        activityIndicatorView.startAnimating()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"
         let endDate = dateFormatter.string(from: Date())
@@ -357,7 +354,6 @@ class ViewController: UIViewController {
         let params = ChartIQQuoteFeedParams(symbol: symbol, startDate: "2016-12-16T16:00:00.000Z", endDate: endDate, interval: _interval, period: _period)
         loadChartData(by: params, completionHandler: {[weak self] (data) in
             guard let strongSelf = self else { return }
-            DispatchQueue.main.async { strongSelf.activityIndicatorView.stopAnimating() }
             completionHandler(data)
         })
     }
@@ -573,15 +569,12 @@ extension ViewController: ChartIQDelegate {
     }
     
     func chartIQView(_ chartIQView: ChartIQView, didUpdateLayout layout: Any) {
-        activityIndicatorView.stopAnimating()
     }
     
     func chartIQView(_ chartIQView: ChartIQView, didUpdateSymbol symbol: String) {
-        activityIndicatorView.stopAnimating()
     }
     
     func chartIQView(_ chartIQView: ChartIQView, didUpdateDrawing drawings: Any) {
-        activityIndicatorView.stopAnimating()
     }
     
 }
