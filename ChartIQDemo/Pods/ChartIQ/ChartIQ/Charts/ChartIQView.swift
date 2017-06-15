@@ -735,16 +735,27 @@ public class ChartIQView: UIView {
         addEvent("CHIQ_setChartScale", parameters: ["scale": scaleString])
     }
     
-    /// Sets the chart style.
+    /// Change a css style on the chart.
     ///
     /// - Parameters:
     ///   - obj: The object whose style you wish to change (stx_grid, stx_xaxis, etc)
     ///   - attribute: The style name of the object you wish to change
     ///   - value: The value to assign to the attribute
-    public func setStyle(_ obj: String, attribute: String, value: String) {
+    public func changeChartStyle(_ obj: String, attribute: String, value: String) {
         let script = "stxx.setStyle(\"\(obj)\",\"\(attribute)\",\"\(value)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setStyle", parameters: ["obj": obj, "attribute": attribute, "value": value])
+        addEvent("CHIQ_changeChartStyle", parameters: ["obj": obj, "attribute": attribute, "value": value])
+    }
+    
+    /// Change a property value on the chart
+    ///
+    /// - Parameters:
+    ///   - property: The property name of the object you wish to change
+    ///   - value: The value to assign to the property
+    public func changeChartProperty(_ property: String, value: String) {
+        let script = "stxx.chart.\(property) = \"\(value)\";"
+        webView.evaluateJavaScript(script, completionHandler: nil)
+        addEvent("CHIQ_changeChartProperty", parameters: ["property": property, "value": value])
     }
     
     /// Turns crosshairs on
