@@ -1197,7 +1197,7 @@ public class ChartIQView: UIView {
     fileprivate func formatJSQuoteData(from data: [ChartIQData], cb: String) {
         let data = try! JSONSerialization.data(withJSONObject: data.map{ $0.toDictionary()}, options: .prettyPrinted)
         let json = String(data: data, encoding: .utf8)?.replacingOccurrences(of: "\n", with: "") ?? ""
-        let script = "parseData('\(json)', \"\(cb)\"); "
+        let script = "parseData('\(json)', \"\(cb)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
@@ -1236,7 +1236,9 @@ extension ChartIQView: WKScriptMessageHandler {
             let params = ChartIQQuoteFeedParams(symbol: symbol, startDate: startDate, endDate: endDate, interval: interval, period: period)
             dataSource?.pullInitialData(by: params, completionHandler: {[weak self] (data) in
                 guard let strongSelf = self else { return }
-                strongSelf.formatJSQuoteData(from: data, cb: cb)
+                DispatchQueue.main.async {
+                    strongSelf.formatJSQuoteData(from: data, cb: cb)
+                }
             })
             addEvent("CHIQ_pullInitialData", parameters: ["symbol": symbol, "interval": String(period), "timeUnit": interval, "start": startDate, "end": endDate])
         case .pullUpdateData:
@@ -1250,7 +1252,9 @@ extension ChartIQView: WKScriptMessageHandler {
             let params = ChartIQQuoteFeedParams(symbol: symbol, startDate: startDate, endDate: endDate, interval: interval, period: period)
             dataSource?.pullUpdateData(by: params, completionHandler: {[weak self] (data) in
                 guard let strongSelf = self else { return }
-                strongSelf.formatJSQuoteData(from: data, cb: cb)
+                DispatchQueue.main.async {
+                    strongSelf.formatJSQuoteData(from: data, cb: cb)
+                }
             })
             addEvent("CHIQ_pullUpdate", parameters: ["symbol": symbol, "interval": String(period), "timeUnit": interval, "start": startDate])
         case .pullPaginationData:
@@ -1264,7 +1268,9 @@ extension ChartIQView: WKScriptMessageHandler {
             let params = ChartIQQuoteFeedParams(symbol: symbol, startDate: startDate, endDate: endDate, interval: interval, period: period)
             dataSource?.pullPaginationData(by: params, completionHandler: {[weak self] (data) in
                 guard let strongSelf = self else { return }
-                strongSelf.formatJSQuoteData(from: data, cb: cb)
+                DispatchQueue.main.async {
+                    strongSelf.formatJSQuoteData(from: data, cb: cb)
+                }
             })
             addEvent("CHIQ_pullPagination", parameters: ["symbol": symbol, "interval": String(period), "timeUnit": interval, "end": endDate])
         case .layout:
