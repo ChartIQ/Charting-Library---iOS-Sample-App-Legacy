@@ -805,6 +805,14 @@ public class ChartIQView: UIView {
         return nil
     }
     
+    /// Sets the theme for the chart
+    /// 'none' is there if the user wants to use custom themes they created
+    /// valid values: day, night, none
+    ///
+    public func setTheme(_ theme: String) {
+        webView.evaluateJavaScript("setTheme(\"\(theme)\");")
+    }
+    
     public func resizeChart() {
         webView.evaluateJavaScript("resizeScreen();", completionHandler: nil)
     }
