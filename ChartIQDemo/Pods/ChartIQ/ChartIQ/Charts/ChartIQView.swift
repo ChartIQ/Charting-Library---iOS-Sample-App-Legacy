@@ -1142,6 +1142,31 @@ public class ChartIQView: UIView {
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
+    public func invoke(functionName: String, args: Any...) -> Any {
+        let jsonData = try! JSONSerialization.data(withJSONObject: args, options: .prettyPrinted)
+        let json = String(data: jsonData, encoding: .utf8)?.replacingOccurrences(of: "\n", with: "") ?? ""
+        
+        let script = "stxx.\(functionName)(\(json));"
+        let value = webView.evaluateJavaScriptWithReturn(script)
+        var result = ""
+
+        if value != nil {
+            result = unwrapOptional(any: value as Any) as! String
+        }
+        return result
+    }
+    
+    public func unwrapOptional(any:Any) -> Any {
+        let mi = Mirror(reflecting: any)
+        if mi.displayStyle != .optional {
+            return any
+        }
+        
+        if mi.children.count == 0 { return NSNull() }
+        let (_, some) = mi.children.first!
+        return some
+    }
+    
     // MARK: - Private
     
     /// Uses this method to load the default ChartIQView setting
