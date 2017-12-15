@@ -389,6 +389,8 @@ class ViewController: UIViewController {
     
     // MARK: - Data
     
+    let uuid = UUID().uuidString;
+    
     func loadChartData(by params: ChartIQQuoteFeedParams, completionHandler: @escaping ([ChartIQData]) -> Void) {
         let urlString =
             "http://simulator.chartiq.com/datafeed?identifier=\(params.symbol)" +
@@ -396,7 +398,8 @@ class ViewController: UIViewController {
             "\(params.endDate.isEmpty ? "" : "&enddate=\(params.endDate)")" +
             "&interval=\(params.interval)" +
             "&period=\(params.period)" +
-            "&seed=1001"
+            "&extended=1" +
+            "&session=\(uuid)"
         guard let url = URL(string: urlString) else { return }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let strongSelf = self else { return }
