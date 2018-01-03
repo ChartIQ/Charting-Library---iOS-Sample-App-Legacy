@@ -302,6 +302,7 @@ public class ChartIQView: UIView {
         case layout = "layoutHandler"
         case drawing = "drawingHandler"
         case accessibility = "accessibilityHandler"
+        case log = "logHandler"
     }
     
     internal static var isValidApiKey = false
@@ -576,7 +577,8 @@ public class ChartIQView: UIView {
         userContentController.add(self, name: ChartIQCallbackMessage.pullPaginationData.rawValue)
         userContentController.add(self, name: ChartIQCallbackMessage.layout.rawValue)
         userContentController.add(self, name: ChartIQCallbackMessage.drawing.rawValue)
-        
+        userContentController.add(self, name: ChartIQCallbackMessage.log.rawValue)
+
         // Create the configuration with the user content controller
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = userContentController
@@ -616,6 +618,8 @@ public class ChartIQView: UIView {
         clear()
         _dataMethod = method
         addEvent("CHIQ_setDataMethod", parameters: ["method": method == .pull ? "PULL" : "PUSH"])
+        let script = "determineOs()"
+        webView.evaluateJavaScript(script, completionHandler: nil)
         if method == .pull {
             let script = "attachQuoteFeed(\(ChartIQView.refreshInterval))";
             webView.evaluateJavaScript(script, completionHandler: nil)
@@ -929,7 +933,7 @@ public class ChartIQView: UIView {
             if let inputs = json as? [[String: Any]] {
                 return inputs.filter({ (input) -> Bool in
                     let name = input["name"] as? String
-                    return name != nil && name != "id" && name != "display" && !name!.hasSuffix(" Period")
+                    return name != nil && name != "id" && name != "display"
                 })
             }
             return json
@@ -1404,6 +1408,21 @@ extension ChartIQView: WKScriptMessageHandler {
                     UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, quote);
                 }
             }
+        case .log:
+        // Allows for various console messages from JavaScript to show up in Xcode console.
+        // Accepted console methods are "log," "warning," and "error".
+            let message = message.body as! [String: Any]
+            let method = message["method"] as? String ?? "LOG"
+            let arguments = message["arguments"] as! [String: String]
+            var msg: String = ""
+            for (_, value) in arguments {
+                if (msg.characters.count > 0) {
+                    msg += "\n"
+                }
+                
+                msg += value
+            }
+            NSLog("%@: %@", method, msg)
         }
     }
 }
@@ -1417,4 +1436,3 @@ extension ChartIQView : WKNavigationDelegate {
     }
     
 }
-

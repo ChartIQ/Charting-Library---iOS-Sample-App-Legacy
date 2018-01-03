@@ -13,12 +13,15 @@ import ChartIQ
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let url = "http://yourdeployment/template-native-sdk.html"
+    //let url = "http://192.168.1.184/sample-template-native-sdk.html"
     let apiKey = ""
-
+    let url = Bundle.main.url(forResource: "ciq/sample-template-native-sdk", withExtension: "html")
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        try! ChartIQView.start(withAPIKey: apiKey, url: url)
+        //try! ChartIQView.start(withAPIKey: apiKey, url: url)
+        try! ChartIQView.start(withAPIKey: apiKey, url: (url?.absoluteString)!)
         return true
     }
 
