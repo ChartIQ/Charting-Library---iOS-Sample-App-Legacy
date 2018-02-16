@@ -1053,10 +1053,15 @@ public class ChartIQView: UIView {
         var addedStudy = [Study]()
         let script = "getAddedStudies();"
         if let listString = webView.evaluateJavaScriptWithReturn(script), !listString.isEmpty {
-            let list = listString.components(separatedBy: "|||")
+            let list = listString.components(separatedBy: "||")
             list.forEach({ (study) in
                 let components = study.components(separatedBy: "___")
-                let name = components[0]
+                var name = components[0]
+                /// Swift seems to have trouble parsing out the zwnb from pipe used to separate our studies
+                if name.contains("|\u{200c}") {
+                    name.remove(at: name.startIndex)
+                    name.insert("\u{200c}", at: name.startIndex)
+                    }
                 let inputString = components[1]
                 let outputString = components[2]
                 var inputs: [String: Any]?
@@ -1416,10 +1421,10 @@ extension ChartIQView: WKScriptMessageHandler {
             let arguments = message["arguments"] as! [String: String]
             var msg: String = ""
             for (_, value) in arguments {
-                if (msg.characters.count > 0) {
+                if (msg.count > 0) {
                     msg += "\n"
                 }
-                
+
                 msg += value
             }
             NSLog("%@: %@", method, msg)
@@ -1428,11 +1433,11 @@ extension ChartIQView: WKScriptMessageHandler {
 }
 
 extension ChartIQView : WKNavigationDelegate {
-    
+
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         getStudyObjects()
         loadDefaultSetting()
         delegate?.chartIQViewDidFinishLoading(self)
     }
-    
+
 }
