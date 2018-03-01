@@ -13,9 +13,8 @@ import ChartIQ
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //let url = "http://192.168.1.184/sample-template-native-sdk.html"
+    let url = "http://demo.chartiq.com/sample-template-native-sdk.html"
     let apiKey = ""
-    let url = Bundle.main.url(forResource: "ciq/sample-template-native-sdk", withExtension: "html")
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
