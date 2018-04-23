@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fct-E4-rZJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fct-E4-rZJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,7 @@
             <objects>
                 <navigationController id="fct-E4-rZJ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SOu-Sm-lwi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.082352941176470587" green="0.12156862745098039" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,7 +57,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3uZ-Iq-85c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NcU-Nu-0b2">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier=" " translatesAutoresizingMaskIntoConstraints="NO" id="whL-j2-KiH" customClass="ChartIQView" customModule="ChartIQ">
@@ -449,11 +450,11 @@
                                         </connections>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-1v-gsZ">
-                                        <rect key="frame" x="128" y="23" width="235" height="572"/>
+                                        <rect key="frame" x="128" y="23" width="235" height="520"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="235" id="Sbj-HQ-0gy"/>
-                                            <constraint firstAttribute="height" constant="572" id="yZe-bM-pII"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="760" id="g3t-Cz-mpl"/>
                                         </constraints>
                                         <view key="tableHeaderView" contentMode="scaleToFill" id="F0Q-t3-vP6">
                                             <rect key="frame" x="0.0" y="0.0" width="235" height="44"/>
@@ -518,6 +519,7 @@
                                     <constraint firstItem="hwT-vL-1By" firstAttribute="top" secondItem="cKR-cz-sAj" secondAttribute="top" id="G6Z-gD-s3D"/>
                                     <constraint firstItem="SZm-1v-gsZ" firstAttribute="top" secondItem="cKR-cz-sAj" secondAttribute="top" constant="23" id="GHO-dh-g47"/>
                                     <constraint firstAttribute="trailing" secondItem="hwT-vL-1By" secondAttribute="trailing" id="L0z-Iq-0WY"/>
+                                    <constraint firstAttribute="bottom" secondItem="SZm-1v-gsZ" secondAttribute="bottom" priority="750" id="M9v-ph-pDp"/>
                                     <constraint firstAttribute="bottom" secondItem="hwT-vL-1By" secondAttribute="bottom" id="pmo-QN-kZ2"/>
                                     <constraint firstAttribute="trailing" secondItem="SZm-1v-gsZ" secondAttribute="trailing" constant="12" id="qqy-u0-CSZ"/>
                                 </constraints>
@@ -635,7 +637,7 @@
             <objects>
                 <tableViewController title="Setting" id="OIc-UD-2yc" customClass="SettingViewController" customModule="ChartIQDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="40" sectionFooterHeight="28" id="dDX-rf-sf7">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -899,7 +901,7 @@
             <objects>
                 <tableViewController id="sBs-bN-ZUC" customClass="OptionsViewController" customModule="ChartIQDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="2gr-Vx-uZ7">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -950,7 +952,7 @@
                             </button>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="Ets-Z4-1g4">
-                            <rect key="frame" x="252" y="6" width="85" height="33"/>
+                            <rect key="frame" x="252" y="5.5" width="85" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <gestureRecognizers/>
@@ -969,7 +971,7 @@
             <objects>
                 <tableViewController title="Search" automaticallyAdjustsScrollViewInsets="NO" id="Mk1-w8-xi8" customClass="SearchStudiesViewController" customModule="ChartIQDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="42" sectionFooterHeight="28" id="dMy-74-EnC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1093,7 +1095,7 @@
             <objects>
                 <tableViewController id="mpe-th-epb" customClass="StudyDetailViewController" customModule="ChartIQDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="42" sectionFooterHeight="28" id="0hh-R3-8qE">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
