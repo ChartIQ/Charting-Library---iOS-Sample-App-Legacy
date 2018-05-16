@@ -21,7 +21,9 @@ Feel free to contact us and request sample code and guidance on how to extend th
 
 Instructions for compiling the application and for using the native SDK can be found at:
 
-https://chartiq.readme.io/docs/ios-sdk
+http://documentation.chartiq.com/tutorial-Starting%20on%20iOS.html
+
+Open the app in Xcode using xcworkspace file and build. **By default the app currently targets an older version of Swift than Xcode 9 prefers. The app will compile but if you would like to update the Swift target you must use Xcode's converter.** 
 
 
 ## Contributing to this project
