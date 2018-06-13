@@ -1,12 +1,16 @@
 PODS:
-  - ChartIQ (1.0.15)
+  - ChartIQ (1.0.17)
 
 DEPENDENCIES:
-  - ChartIQ (~> 1.0.15)
+  - ChartIQ (~> 1.0.17)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ChartIQ
 
 SPEC CHECKSUMS:
-  ChartIQ: b6e47e09d4834562ef6142d24f55bedb03c5423e
+  ChartIQ: c34852b40180c3df01c4b61c28d10e55673f2f91
 
-PODFILE CHECKSUM: 087384ed1e52aea95b7b2b20efe1993d35d58460
+PODFILE CHECKSUM: 6890353c2f96bac761f9af3d374e81fb336d74d3
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

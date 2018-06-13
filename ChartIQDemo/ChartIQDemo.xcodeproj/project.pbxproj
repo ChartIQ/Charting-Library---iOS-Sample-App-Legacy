@@ -292,7 +292,6 @@
 				7AFE81551E41E6D1007C7A7A /* Resources */,
 				7AFE81951E41E714007C7A7A /* Embed Frameworks */,
 				45BAF407B8C043FAB35DD172 /* [CP] Embed Pods Frameworks */,
-				19B95F558891D1F3D39E2FB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,8 +310,6 @@
 				7AFE81671E41E6D1007C7A7A /* Sources */,
 				7AFE81681E41E6D1007C7A7A /* Frameworks */,
 				7AFE81691E41E6D1007C7A7A /* Resources */,
-				513BAA5D1E45A37ACF187648 /* [CP] Embed Pods Frameworks */,
-				AE4AA27759E7D9E21EDF2FD9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,8 +329,6 @@
 				7AFE81721E41E6D1007C7A7A /* Sources */,
 				7AFE81731E41E6D1007C7A7A /* Frameworks */,
 				7AFE81741E41E6D1007C7A7A /* Resources */,
-				73B68160B36B92DA37EC23B6 /* [CP] Embed Pods Frameworks */,
-				7220F725BA14D269792CF159 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -429,21 +424,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19B95F558891D1F3D39E2FB3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		45BAF407B8C043FAB35DD172 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,51 +440,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		513BAA5D1E45A37ACF187648 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7220F725BA14D269792CF159 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemoUITests/Pods-ChartIQDemoUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		73B68160B36B92DA37EC23B6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemoUITests/Pods-ChartIQDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7D68C2DB552EC7AEAAA84714 /* [CP] Check Pods Manifest.lock */ = {
@@ -541,21 +476,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE4AA27759E7D9E21EDF2FD9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCD9BB18817F526B46F1CEEA /* [CP] Check Pods Manifest.lock */ = {
