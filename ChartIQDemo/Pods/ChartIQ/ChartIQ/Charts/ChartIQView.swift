@@ -111,11 +111,6 @@ public enum ChartIQAggregationType: Int {
     case renko
 }
 
-/// ROKO Mobi error
-public enum ROKOMobiError: Error {
-    case invalidAPIKey
-    case serverError
-}
 
 /// Study error
 public enum ChartIQStudyError: Error {
@@ -176,11 +171,6 @@ public class ChartIQView: UIView {
         case low = "Low"
         case volume = "Volume"
     }
-    
-    static internal let rokoMobiEventUrl = URL(string:"https://api.roko.mobi/v1/events/")!
-    static internal let rokoMobiSetUserUrl = "https://api.roko.mobi/v1/usersession/"
-    static internal var customProperties = [String]()
-    static internal var rokoMobiUser = ""
     
     internal var _dataMethod: ChartIQDataMethod = .push
     
@@ -305,14 +295,6 @@ public class ChartIQView: UIView {
         case log = "logHandler"
     }
     
-    internal static var isValidApiKey = false
-    
-    internal static var rokoMobiApiKey = ""
-    
-    internal static var rokoMobiAuthorizaion = ""
-    
-    internal static var disableAnalytics = false
-    
     internal static let serverError = NSError(domain:"Server error.", code:0, userInfo:nil)
     
     internal static var carrierName: String {
@@ -335,8 +317,8 @@ public class ChartIQView: UIView {
     
     internal func initialize() {
         setupWebView()
-        NotificationCenter.default.addObserver(self, selector: #selector(ChartIQView.applicationWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ChartIQView.applicationDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(ChartIQView.applicationWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(ChartIQView.applicationDidBecomeActive),	 name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
     /// Cleans up the message handlers in order to avoid a memory leak.
@@ -354,188 +336,9 @@ public class ChartIQView: UIView {
     /// Sets your ROKO Mobi api id and url here.
     ///
     /// - Parameters:
-    ///   - key: The ROKO Mobi api id
-    ///   - url: The ROKO Mobi url
-    /// - Throws: ROKOMobiError
-    public static func start(withAPIKey key: String, url: String) throws {
-        ChartIQView.rokoMobiApiKey = key
+    ///   - url: The starting url
+    public static func start(url: String) throws {
         ChartIQView.url = url
-        
-        if(key.isEmpty) {
-            ChartIQView.disableAnalytics = true
-            ChartIQView.isValidApiKey = true
-        } else {
-            try ChartIQView.addInitEvent()
-        }
-    }
-    
-    /// Sets your ROKO Mobi user
-    ///
-    /// - Parameters:
-    ///   - user: The user name
-    ///   - completionHandler: The completion handler
-    public static func setUser(_ user: String, completionHandler: @escaping ((Error?) -> Void)) {
-        let url = URL(string: rokoMobiSetUserUrl + "setUserCmd")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = ChartIQView.getROKOMobiRequestHeader()
-        let parameter = ["username": user] as [String : Any]
-        request.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: [])
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if error != nil {
-                completionHandler(error!)
-            } else  {
-                guard let data = data else { return }
-                ChartIQView.rokoMobiUser = user
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let data = json["data"] as? [String: Any], let sessionKey = data["sessionKey"] as? String, let user = data["user"] as? [String: Any], let customProperties = user["customProperties"] as? [String: Any] {
-                        
-                        ChartIQView.customProperties =  Array(customProperties.keys)
-                        let url = URL(string: rokoMobiSetUserUrl + "bindApplicationSessionCmd")
-                        var request = URLRequest(url: url!)
-                        request.allHTTPHeaderFields = ChartIQView.getROKOMobiRequestHeader()
-                        request.allHTTPHeaderFields!["Authorization"] = "X-Roko-Mobi-User-Session \(sessionKey)"
-                        request.httpMethod = "POST"
-                        let parameter = ["applicationSessionUUID": UIDevice.current.identifierForVendor!.uuidString] as [String : Any]
-                        request.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: [])
-                        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                            if error != nil {
-                                completionHandler(error!)
-                            } else {
-                                rokoMobiAuthorizaion = "X-Roko-Mobi-User-Session \(sessionKey)"
-                                completionHandler(nil)
-                            }
-                        }
-                        task.resume()
-                    } else {
-                        completionHandler(serverError)
-                    }
-                } catch {
-                    completionHandler(serverError)
-                }
-            }
-        }
-        task.resume()
-    }
-    
-    // MARK: - ROKO Mobi Event
-    
-    internal static func getROKOMobiRequestHeader() -> [String: String] {
-        
-        
-        var headers = ["Content-Type": "application/json",
-                       "X-ROKO-Mobi-Api-Key": ChartIQView.rokoMobiApiKey,
-                       "X-ROKO-Mobi-Partner-Key": "chiq",
-                       "X-ROKO-Mobi-Device-Type": UIDevice.current.model,
-                       "X-ROKO-Mobi-Device-Model": UIDevice.current.modelName,
-                       "X-ROKO-Mobi-OS": UIDevice.current.systemName,
-                       "X-ROKO-Mobi-OS-Version": UIDevice.current.systemVersion,
-                       "X-ROKO-Mobi-Carrier": ChartIQView.carrierName,
-                       "X-ROKO-Mobi-Application-Version": Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String,
-                       "X-ROKO-Mobi-Timezone": TimeZone.current.identifier,
-                       "X-ROKO-Mobi-Network-Type": "WiFi"
-                        ]
-        
-        if !ChartIQView.rokoMobiAuthorizaion.isEmpty {
-            headers["Authorization"] = ChartIQView.rokoMobiAuthorizaion
-        }
-        return headers
-    }
-    
-    internal static func addInitEvent() throws {
-        var request = URLRequest(url: rokoMobiEventUrl)
-        request.allHTTPHeaderFields = ChartIQView.getROKOMobiRequestHeader()
-        request.httpMethod = "POST"
-        let parameter = ["applicationSessionUUID": UIDevice.current.identifierForVendor!.uuidString,
-                         "events": [["name": "_ChartIQ.SDK.Init", "properties": ["ChartIQ SDK Version": sdkVersion]]]
-                    ] as [String : Any]
-        request.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: [])
-        let response = URLSession.shared.synchronousDataTask(with: request)
-        guard let data = response.0 else { throw ROKOMobiError.serverError }
-        var json: Any
-        do {
-            json = try JSONSerialization.jsonObject(with: data, options: [])
-        } catch {
-            throw ROKOMobiError.serverError
-        }
-        guard let result = json as? [String: Any] else { throw ROKOMobiError.serverError }
-        if let status = result["apiStatusCode"] as? String {
-            if status == "ApiKeyInvalid" {
-                throw ROKOMobiError.invalidAPIKey
-            } else if status != "Success" {
-                throw ROKOMobiError.serverError
-            } else {
-                ChartIQView.isValidApiKey = true
-            }
-        }
-    }
-    
-    /// Adds the ROKO Mobi event
-    ///
-    /// - Parameters:
-    ///   - name: The event name
-    ///   - parameters: The event parameters
-    public func addEvent(_ name: String, parameters: [String: String]? = nil) {
-        if !ChartIQView.disableAnalytics || name == "_ROKO.Active User" || name == "_ROKO.Inactive User" {
-            var request = URLRequest(url: ChartIQView.rokoMobiEventUrl)
-            request.httpMethod = "POST"
-            request.allHTTPHeaderFields = ChartIQView.getROKOMobiRequestHeader()
-            var _parameters = parameters
-            if _parameters != nil {
-                _parameters!["ChartIQ SDK Version"] = ChartIQView.sdkVersion
-            } else {
-                _parameters = ["ChartIQ SDK Version": ChartIQView.sdkVersion]
-            }
-            let parameter = ["applicationSessionUUID": UIDevice.current.identifierForVendor!.uuidString,
-                             "events": [["name": name, "properties": _parameters!]]
-                ] as [String : Any]
-            request.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: [])
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                error.flatMap { print("Error in add event \(name): \($0.localizedDescription)") }
-            }
-            task.resume()
-        }
-    }
-    
-    /// Adds the ROKO Mobi user custom property
-    ///
-    /// - Parameters:
-    ///   - value: The property value
-    ///   - key: The property key
-    ///   - completionBlock: The completion blocl
-    public func setUserCustomProperty(_ value: Any, forKey key: String, completionBlock: @escaping (Error?) -> Void) {
-        if !ChartIQView.customProperties.contains(key) {
-            completionBlock("Keys not found")
-        }
-        let url = URL(string: ChartIQView.rokoMobiSetUserUrl + "user")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "PUT"
-        request.allHTTPHeaderFields = ChartIQView.getROKOMobiRequestHeader()
-        var parameters = [String: Any]()
-        parameters["username"] = ChartIQView.rokoMobiUser
-        parameters["name"] = ChartIQView.rokoMobiUser
-        parameters["customProperties"] = [key: value]
-        request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: [])
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if error == nil {
-                completionBlock(nil)
-            } else  {
-                completionBlock(error)
-            }
-        }
-        task.resume()
-    }
-    
-    // MARK: - Notification Handler
-    
-    /// Handles UIApplicationWillResignActive notification
-    func applicationWillResignActive() {
-        addEvent("_ROKO.Inactive User")
-    }
-    
-    /// Handles UIApplicationDidBecomeActive notification
-    func applicationDidBecomeActive() {
-        addEvent("_ROKO.Active User")
     }
     
     // MARK: - Helper
@@ -562,8 +365,6 @@ public class ChartIQView: UIView {
     
     /// setup WKWebView
     internal func setupWebView() {
-        guard ChartIQView.isValidApiKey else { return }
-        
         // Create the user content controller and add the script to it
         let userContentController = WKUserContentController()
         
@@ -588,15 +389,17 @@ public class ChartIQView: UIView {
         webView.navigationDelegate = self
         
         addSubview(webView)
-        setupConstraints()
+        if #available(iOS 9, *) {
+            setupConstraints()
+        }
 
         if let url = URL(string: ChartIQView.chartIQUrl) {
             webView.load(URLRequest(url: url))
-            addEvent("_ROKO.Active User")
         }
     }
     
     /// Setup constraints
+    @available(iOS 9, *)
     internal func setupConstraints() {
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.leadingAnchor.constraint(
@@ -617,7 +420,6 @@ public class ChartIQView: UIView {
     public func setDataMethod(_ method: ChartIQDataMethod) {
         clear()
         _dataMethod = method
-        addEvent("CHIQ_setDataMethod", parameters: ["method": method == .pull ? "PULL" : "PUSH"])
         let script = "determineOs()"
         webView.evaluateJavaScript(script, completionHandler: nil)
         if method == .pull {
@@ -651,8 +453,6 @@ public class ChartIQView: UIView {
         }
         let script = "setChartType(\"\(chartType)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setChartType", parameters: ["chartType": chartType])
-        addEvent("CHIQ_setAggregationType", parameters: ["aggregationType": ""])
     }
     
     /// Sets the base aggregation type to "rangebars", "ohlc", "kagi", "pandf", "heikinashi", "linebreak", "renko".
@@ -669,10 +469,8 @@ public class ChartIQView: UIView {
         case .linebreak: aggregationType = "linebreak"
         case .renko: aggregationType = "renko"
         }
-        let script = "setAggregationType(\"\(chartType)\");"
+        let script = "setAggregationType(\"\(aggregationType)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setAggregationType", parameters: ["aggregationType": aggregationType])
-        addEvent("CHIQ_setChartType", parameters: ["chartType": "candle"])
     }
     
     /// Sets the periodicity and interval for the chart. Interval describes the raw data interval (1, 5, 30, "day") while period describes the multiple of that interval (7 minutes, 3 days, 7 X 5 minutes). This method sets the new periodicity and creates a new dataSet.
@@ -687,7 +485,6 @@ public class ChartIQView: UIView {
             _interval = "\"" + interval + "\""
         }
         webView.evaluateJavaScript("setPeriodicity(\(period), \(_interval), \"\(timeUnit)\");", completionHandler: nil)
-        addEvent("CHIQ_setPeriodicity", parameters: ["period": String(period), "interval": interval])
     }
     
     /// Renders a chart for a particular instrument from the data passed in or fetches new data from the attached CIQ.QuoteFeed. This is the method that should be called every time a new chart needs to be drawn for a different instrument.
@@ -702,7 +499,6 @@ public class ChartIQView: UIView {
         
         let script = "callNewChart(\"\(symbol)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setSymbol", parameters: ["symbol": symbol])
     }
     
     /// Renders a chart for a particular instrument from the data passed in or fetches new data from the attached CIQ.QuoteFeed. This is the method that should be called every time a new chart needs to be drawn for a different instrument.
@@ -713,7 +509,6 @@ public class ChartIQView: UIView {
         let script =
             "stxx.newChart(\"\(symbol)\", \(dataMethod == .pull ? "null" : "[]"), null, \(dataMethod == .pull ? "function() { webkit.messageHandlers.newSymbolCallbackHandler.postMessage(\"\(symbol)\"); } " : "null"),  {periodicity:{period:\(periodicity),interval:\(jsInterval)}}); "
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setSymbolObject", parameters: ["symbolObject.symbol": object.symbol])
     }
     
     /// Adds a symbol comparison to the chart.
@@ -725,7 +520,6 @@ public class ChartIQView: UIView {
         let addSeriesScript = "stxx.addSeries(\"\(symbol)\", {display:\"\(symbol)\", color: \"\(color.toHexString())\"  isComparison:true});"
 
         webView.evaluateJavaScript(addSeriesScript, completionHandler: nil)
-        addEvent("CHIQ_addComparison", parameters: ["symbol": symbol])
     }
     
     /// Removes a symbol comparison from the chart.
@@ -734,7 +528,6 @@ public class ChartIQView: UIView {
     public func removeComparisonSymbol(_ symbol: String) {
         let script = "stxx.removeSeries(\"\(symbol)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_removeComparison", parameters: ["symbol": symbol])
     }
     
     /// Sets the chart scale.
@@ -748,7 +541,6 @@ public class ChartIQView: UIView {
         }
         let script = "stxx.layout.chartScale = \"\(scaleString)\";"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setChartScale", parameters: ["scale": scaleString])
     }
     
     /// Change a css style on the chart.
@@ -760,7 +552,6 @@ public class ChartIQView: UIView {
     public func changeChartStyle(_ obj: String, attribute: String, value: String) {
         let script = "stxx.setStyle(\"\(obj)\",\"\(attribute)\",\"\(value)\");"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_changeChartStyle", parameters: ["obj": obj, "attribute": attribute, "value": value])
     }
     
     /// Change a property value on the chart
@@ -771,7 +562,6 @@ public class ChartIQView: UIView {
     public func setChartProperty(_ property: String, value: Any) {
         let script = "stxx.chart.\(property) = \"\(value)\";"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_changeChartProperty", parameters: ["property": property, "value": value as! String])
     }
     
     /// get a property value on the chart
@@ -780,7 +570,6 @@ public class ChartIQView: UIView {
     ///   - property: The property name of the object you wish to receive
     public func getChartProperty(_ property: String) -> String {
         let script = "stxx.chart.\(property);"
-        addEvent("CHIQ_getChartProperty", parameters: ["property": property])
         return webView.evaluateJavaScriptWithReturn(script)!
     }
     
@@ -792,7 +581,6 @@ public class ChartIQView: UIView {
     public func setEngineProperty(_ property: String, value: Any) {
         let script = "stxx.\(property) = \"\(value)\";"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_changeEngineProperty", parameters: ["property": property, "value": value as! String])
     }
     
     // get a property value on the chart engine
@@ -801,7 +589,6 @@ public class ChartIQView: UIView {
     ///   - property: The property name of the object you wish to receive
     public func getEngineProperty(_ property: String) -> String {
         let script = "stxx.\(property);"
-        addEvent("CHIQ_getEngineProperty", parameters: ["property": property])
         return webView.evaluateJavaScriptWithReturn(script)!
     }
     
@@ -809,14 +596,12 @@ public class ChartIQView: UIView {
     public func enableCrosshairs() {
         let script = "enableCrosshairs(true);"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_enableCrosshairs")
     }
     
     /// Turns crosshairs off
     public func disableCrosshairs() {
         let script = "enableCrosshairs(false);"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_disableCrosshairs")
     }
     
     /// Checks if crosshairs is on
@@ -856,7 +641,6 @@ public class ChartIQView: UIView {
     public func clear() {
         let script = "stxx.destroy();"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_clearChart")
     }
     
     // MARK: - Set Chart data
@@ -873,7 +657,6 @@ public class ChartIQView: UIView {
         let script =
             "callNewChart(\"\", \(jsonString!)); "
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_pushInitialData", parameters: ["symbol": symbol, "data": jsonString!])
     }
     
     /// Uses this method to stream OHLC data into a chart.
@@ -885,7 +668,6 @@ public class ChartIQView: UIView {
         let jsonString = String(data: jsonData, encoding: .utf8)?.replacingOccurrences(of: "\n", with: "") ?? ""
         let script = "parseData('\(jsonString)');"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_pushUpdate", parameters: ["symbol": symbol, "data": jsonString])
     }
     
     // MARK: - Study
@@ -917,7 +699,6 @@ public class ChartIQView: UIView {
     
     /// Gets all of the available studies.
     public func getStudyList() -> [Study] {
-        addEvent("CHIQ_getStudyList")
         return studyObjects
     }
     
@@ -926,8 +707,7 @@ public class ChartIQView: UIView {
     /// - Parameter name: The study name
     /// - Returns: The JSON Object or nil if an error occur
     public func getStudyInputParameters(by name: String) -> Any?  {
-        addEvent("CHIQ_getStudyInputParameters", parameters: ["studyName": name])
-        let script = "getStudyParameters(\"" + name + "\" , \"inputs\");"
+        let script = "getStudyParameters(\"" + name + "\" , true);"
         if let jsonString = webView.evaluateJavaScriptWithReturn(script), let data = jsonString.data(using: .utf8) {
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             if let inputs = json as? [[String: Any]] {
@@ -946,26 +726,7 @@ public class ChartIQView: UIView {
     /// - Parameter name: The study name
     /// - Returns: The JSON Object or nil if an error occur
     public func getStudyOutputParameters(by name: String) -> Any?  {
-        addEvent("CHIQ_getStudyOutputParameters", parameters: ["studyName": name])
-        let script = "getStudyParameters(\"" + name + "\" , \"outputs\");"
-        if let jsonString = webView.evaluateJavaScriptWithReturn(script), let data = jsonString.data(using: .utf8) {
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                return json
-            } catch {
-                return nil
-            }
-        }
-        return nil
-    }
-    
-    /// Gets study 'parameters' parameters
-    ///
-    /// - Parameter name: The study name
-    /// - Returns: The JSON Object or nul if an error occur
-    public func getStudyParameters(by name: String) -> Any? {
-        addEvent("CHIQ_getStudyParameters", parameters: ["studyName": name])
-        let script = "getStudyParameters(\"" + name + "\" , \"parameters\");"
+        let script = "getStudyParameters(\"" + name + "\" , false);"
         if let jsonString = webView.evaluateJavaScriptWithReturn(script), let data = jsonString.data(using: .utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
@@ -986,7 +747,6 @@ public class ChartIQView: UIView {
     public func setStudy(_ name: String, withParameter key: String, value: String) {
         let script = "setStudy(\"\(name)\", \"\(key)\", \"\(value)\")"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setStudyParameter", parameters: ["parameter": key, "value": value])
     }
     
     /// Sets study parameters.
@@ -1003,7 +763,6 @@ public class ChartIQView: UIView {
     
         parameters.forEach { (parameter) in
             script += getUpdateStudyParametersScript(parameter: parameter.key, value: parameter.value)
-            addEvent("CHIQ_setStudyParameter", parameters: ["parameter": parameter.key, "value": parameter.value])
         }
         
         script += "helper.updateStudy({inputs:newInputParameters, outputs:newOutputParameters}); "
@@ -1044,7 +803,6 @@ public class ChartIQView: UIView {
         
         let script = "addStudy('\(name)', \(_inputs!), \(_outputs!));"
         webView.evaluateJavaScript(script, completionHandler: nil)        
-        addEvent("CHIQ_addStudy", parameters: ["studyName": name])
     }
     
     /// Removes study from the Chart.
@@ -1053,7 +811,6 @@ public class ChartIQView: UIView {
     public func removeStudy(_ name: String) {
         let script = "removeStudy('\(name)');"
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_removeStudy")
     }
     
     /// Remove all studies from the Chart.
@@ -1165,13 +922,11 @@ public class ChartIQView: UIView {
             "currentDrawing = \"\(getDrawToolName(for: tool))\"; " +
             "stxx.changeVectorType(currentDrawing); "
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_enableDrawing")
     }
     
     /// Gets the input parameters for a drawing
     public func getDrawingParameters() -> Any? {
-        if let tool = getCurrentDrawTool() {
-            addEvent("CHIQ_getDrawingParameters", parameters: ["drawingName": getDrawToolName(for: tool)])
+        if getCurrentDrawTool() != nil {
         }
         let script = "JSON.stringify(stxx.currentVectorParameters);"
         if let jsonString = webView.evaluateJavaScriptWithReturn(script), let data = jsonString.data(using: .utf8) {
@@ -1189,7 +944,6 @@ public class ChartIQView: UIView {
         let script =
             "stxx.currentVectorParameters.\(key) = \(value is String ? "\"\(value)\"" : value); "
         webView.evaluateJavaScript(script, completionHandler: nil)
-        addEvent("CHIQ_setDrawingParameter", parameters: ["parameter": key, "value": String(describing: value)])
     }
     
     /// Disables drawing on the chart.
@@ -1336,7 +1090,6 @@ extension ChartIQView: WKScriptMessageHandler {
                     strongSelf.formatJSQuoteData(from: data, cb: cb)
                 }
             })
-            addEvent("CHIQ_pullInitialData", parameters: ["symbol": symbol, "interval": String(period), "timeUnit": interval, "start": startDate, "end": endDate])
         case .pullUpdateData:
             let message = message.body as! [String: Any]
             let cb = message["cb"] as? String ?? ""
@@ -1352,7 +1105,6 @@ extension ChartIQView: WKScriptMessageHandler {
                     strongSelf.formatJSQuoteData(from: data, cb: cb)
                 }
             })
-            addEvent("CHIQ_pullUpdate", parameters: ["symbol": symbol, "interval": String(period), "timeUnit": interval, "start": startDate])
         case .pullPaginationData:
             let message = message.body as! [String: Any]
             let cb = message["cb"] as? String ?? ""
@@ -1368,13 +1120,11 @@ extension ChartIQView: WKScriptMessageHandler {
                     strongSelf.formatJSQuoteData(from: data, cb: cb)
                 }
             })
-            addEvent("CHIQ_pullPagination", parameters: ["symbol": symbol, "interval": String(period), "timeUnit": interval, "end": endDate])
         case .layout:
             if let message = message.body as? String, let data = message.data(using: .utf8) {
                 do {
                     let layout = try JSONSerialization.jsonObject(with: data, options: [])
                     delegate?.chartIQView?(self, didUpdateLayout: layout)
-                    addEvent("CHIQ_layoutChange", parameters: ["json": formatObjectToPrintedJSONFormat(layout)])
                 } catch {
                     print("No Layout return")
                 }
@@ -1384,7 +1134,6 @@ extension ChartIQView: WKScriptMessageHandler {
                 do {
                     let drawings = try JSONSerialization.jsonObject(with: data, options: [])
                     delegate?.chartIQView?(self, didUpdateDrawing: drawings)
-                    addEvent("CHIQ_drawingChange", parameters: ["json": formatObjectToPrintedJSONFormat(drawings)])
                 } catch {
                     print("Drawing callback fail")
                 }

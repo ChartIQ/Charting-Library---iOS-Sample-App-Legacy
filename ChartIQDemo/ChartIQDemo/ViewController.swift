@@ -353,7 +353,7 @@ class ViewController: UIViewController {
         let _period = isMinute ? Int(interval)! : period
         let params = ChartIQQuoteFeedParams(symbol: symbol, startDate: "2016-12-16T16:00:00.000Z", endDate: endDate, interval: _interval, period: _period)
         loadChartData(by: params, completionHandler: {[weak self] (data) in
-            guard let strongSelf = self else { return }
+            guard self != nil else { return }
             completionHandler(data)
         })
     }
@@ -559,14 +559,7 @@ extension ViewController: ChartIQDelegate {
             
             chartIQView.setVoiceoverFields(voiceoverFields);
         }
-        
-        if let user = UserDefaults.standard.value(forKey: "SetUser") as? String {
-            ChartIQView.setUser(user, completionHandler: { (error) in
-                if error == nil { loadDefaultSymbol() }
-            })
-        } else {
-            loadDefaultSymbol()
-        }
+        loadDefaultSymbol()
         
         loadVoiceoverFields()
     }
