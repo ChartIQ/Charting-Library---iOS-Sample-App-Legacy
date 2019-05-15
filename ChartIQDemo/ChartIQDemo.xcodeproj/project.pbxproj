@@ -352,7 +352,8 @@
 				TargetAttributes = {
 					7AFE81561E41E6D1007C7A7A = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = N2JLYEUWDM;
+						ProvisioningStyle = Automatic;
 					};
 					7AFE816A1E41E6D1007C7A7A = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -430,7 +431,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChartIQ/ChartIQ.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -439,7 +440,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7D68C2DB552EC7AEAAA84714 /* [CP] Check Pods Manifest.lock */ = {
@@ -672,8 +673,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2JLYEUWDM;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChartIQDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -693,8 +696,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2JLYEUWDM;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChartIQDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

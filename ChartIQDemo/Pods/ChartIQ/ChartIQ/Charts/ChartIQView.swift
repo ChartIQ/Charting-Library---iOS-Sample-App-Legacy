@@ -143,10 +143,9 @@ public enum ChartIQDrawingTool: Int {
 /// Chart that draw ChartIQ chart.
 public class ChartIQView: UIView {
 
+    var webView: WKWebView!
+    
     // MARK: - Properties
-    
-    internal var webView: WKWebView!
-    
     static internal var url = ""
     static internal var refreshInterval = 0
     static internal var voiceoverFields: [String: Bool] = [:]
@@ -625,6 +624,14 @@ public class ChartIQView: UIView {
         return nil
     }
     
+    /// Checks if chart has finished loading
+    ///
+    /// - Returns: true if the chart has finished loading
+    public func isChartAvailable() -> Bool {
+        let script = "if (isChartAvailable() == true) { \"true\" } else { \"false\" } "
+        return webView.evaluateJavaScriptWithReturn(script) == "true"
+    }
+
     /// Sets the theme for the chart
     /// 'none' is there if the user wants to use custom themes they created
     /// valid values: day, night, none
@@ -653,10 +660,9 @@ public class ChartIQView: UIView {
     public func push(_ data: [ChartIQData]) {
         let obj = data.map{ $0.toDictionary() }
         let jsonData = try! JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-        let jsonString = String(data: jsonData, encoding: .utf8)
-        let script =
-            "callNewChart(\"\", \(jsonString!)); "
-        webView.evaluateJavaScript(script, completionHandler: nil)
+        let jsonString = String(data: jsonData, encoding: .utf8)?.replacingOccurrences(of: "\n", with: "") ?? ""
+        let script = "callNewChart(\"\", \(jsonString)); "
+        self.webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
     /// Uses this method to stream OHLC data into a chart.
@@ -707,7 +713,7 @@ public class ChartIQView: UIView {
     /// - Parameter name: The study name
     /// - Returns: The JSON Object or nil if an error occur
     public func getStudyInputParameters(by name: String) -> Any?  {
-        let script = "getStudyParameters(\"" + name + "\" , true);"
+        let script = "getStudyParameters(\"" + name + "\" , \"inputs\");"
         if let jsonString = webView.evaluateJavaScriptWithReturn(script), let data = jsonString.data(using: .utf8) {
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             if let inputs = json as? [[String: Any]] {
@@ -721,12 +727,12 @@ public class ChartIQView: UIView {
         return nil
     }
     
-    /// Gets study output parameters.
+    /// Gets study outputs or parameters.
     ///
     /// - Parameter name: The study name
     /// - Returns: The JSON Object or nil if an error occur
-    public func getStudyOutputParameters(by name: String) -> Any?  {
-        let script = "getStudyParameters(\"" + name + "\" , false);"
+    public func getStudyOutputsOrParameters(by name: String, type: String) -> Any?  {
+        let script = "getStudyParameters(\"" + name + "\" , \"" + type + "\");"
         if let jsonString = webView.evaluateJavaScriptWithReturn(script), let data = jsonString.data(using: .utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
@@ -1007,7 +1013,7 @@ public class ChartIQView: UIView {
             "       if (input[\"type\"] === \"text\" || input[\"type\"] === \"select\") { " +
             "           newInputParameters[\"\(parameter)\"] = \"\(value)\"; " +
             "       } else if (input[\"type\"] === \"number\") { " +
-            "           newInputParameters[\"\(parameter)\"] = parseInt(\"\(value)\"); " +
+            "           newInputParameters[\"\(parameter)\"] = parseFloat(\"\(value)\"); " +
             "       } else if (input[\"type\"] === \"checkbox\") { " +
             "           newInputParameters[\"\(parameter)\"] = \(value == "false" ? false : true); " +
             "       } " +

@@ -23,6 +23,7 @@ class StudyDetailViewController: UITableViewController {
         case checkbox = "checkbox"
         case color = "color"
         case text = "text"
+        case colorText = "colorText"
         
         var cellIdentifier: String {
             switch self {
@@ -31,6 +32,7 @@ class StudyDetailViewController: UITableViewController {
             case .text: return "StudyValueTableCell"
             case .checkbox: return "StudySwitchTableCell"
             case .color: return "StudyColorTableCell"
+            case .colorText: return "StudyTextAndColorTableCell"
             }
         }
     }
@@ -40,8 +42,10 @@ class StudyDetailViewController: UITableViewController {
     var study: Study!
     var inputParameter: [[String: Any]]!
     var outputParameter: [[String: Any]]!
+    var paramParameter: [[String: Any]]!
     var removeStudyBlock: ((Study) -> Void)?
     var editStudyBlock: ((Study) -> Void)?
+    var selectedCellIndex = -1;
     
     // MARK: - View Life Cycle
     
@@ -125,11 +129,19 @@ class StudyDetailViewController: UITableViewController {
         tableView.addSubview(colorPicker)
         colorPicker.colorDidChangeBlock = { [weak self] (color) in
             guard let strongSelf = self else { return }
-            var output = strongSelf.outputParameter[strongSelf.selectedColorIndex]
-            output["color"] = color.toHexString()
-            strongSelf.outputParameter![strongSelf.selectedColorIndex] = output
-            strongSelf.tableView.reloadData()
-            strongSelf.colorPicker.isHidden = true
+            if strongSelf.selectedCellIndex > (strongSelf.outputParameter.count + strongSelf.inputParameter.count) {
+                var parameter = strongSelf.paramParameter[strongSelf.selectedColorIndex]
+                parameter["color"] = color.toHexString()
+                strongSelf.paramParameter![strongSelf.selectedCellIndex - (strongSelf.inputParameter.count + strongSelf.outputParameter.count)] = parameter
+                strongSelf.tableView.reloadData()
+                strongSelf.colorPicker.isHidden = true
+            } else {
+                var output = strongSelf.outputParameter[strongSelf.selectedColorIndex]
+                output["color"] = color.toHexString()
+                strongSelf.outputParameter![strongSelf.selectedCellIndex - strongSelf.inputParameter.count] = output
+                strongSelf.tableView.reloadData()
+                strongSelf.colorPicker.isHidden = true
+            }
         }
     }
     
@@ -138,7 +150,7 @@ class StudyDetailViewController: UITableViewController {
     func keyboardWillShow() {
         colorPicker.isHidden = true
     }
-    
+
     func updateStudyParameters() {
         var inputs = [String: Any]()
         for input in inputParameter {
@@ -148,8 +160,13 @@ class StudyDetailViewController: UITableViewController {
         for output in outputParameter {
             outputs[output["name"] as! String] = output["color"]!
         }
+        var parameters = [String: Any]()
+        for parameter in paramParameter {
+            parameters[parameter["name"] as! String] = parameter["value"]!
+        }
         study.inputs = inputs
         study.outputs = outputs
+        study.parameters = parameters
     }
     
     func resetStudyParameters() {
@@ -197,7 +214,7 @@ class StudyDetailViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return inputParameter.count + outputParameter.count
+        return inputParameter.count + outputParameter.count + paramParameter.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -211,10 +228,13 @@ class StudyDetailViewController: UITableViewController {
         var parameter: [String: Any]!
         if inputParameter.count > index {
             parameter = inputParameter[index]
-        } else {
+        } else if inputParameter.count + outputParameter.count > index {
             parameter = outputParameter[index - inputParameter.count]
+        } else {
+            parameter = paramParameter[index - (inputParameter.count + outputParameter.count)]
         }
-        let type = parameter["type"] != nil ? parameter["type"] as! String : "color"
+        var type = parameter["type"] != nil ? parameter["type"] as! String : "color"
+        if parameter["color"] != nil && parameter["type"] != nil && parameter["type"] as! String == "text" { type = "colorText" }
         let optionType = OptionType(rawValue: type)!
         let cell = tableView.dequeueReusableCell(withIdentifier: optionType.cellIdentifier, for: indexPath) as! TableViewCell
         cell.labels?[0].text = parameter["name"] as? String ?? ""
@@ -223,14 +243,14 @@ class StudyDetailViewController: UITableViewController {
             cell.labels?[1].text = (parameter["value"] as? String)?.capitalized ?? ""
         case .number, .text:
             cell.textFields![0].keyboardType = optionType == .number ? .numberPad : .default
-            cell.textFields?[0].text = optionType == .number ? String(parameter["value"] as? Int ?? 0) : parameter["value"] as? String ?? ""
+            cell.textFields?[0].text = optionType == .number ? String(parameter["value"] as? Float ?? 0) : parameter["value"] as? String ?? ""
             cell.textFieldValueDidEndEditingBlock = {[weak self] (cell, textField) in
                 guard let strongSelf = self else { return }
                 let name = cell.labels![0].text ?? ""
                 for (index, var inputs) in strongSelf.inputParameter.enumerated() {
                     if inputs["name"] as? String == name {
                         if optionType == .number {
-                            inputs["value"] = Int(textField.text ?? "0")
+                            inputs["value"] = Float(textField.text ?? "0")
                         } else {
                             inputs["value"] = textField.text ?? ""
                         }
@@ -258,6 +278,7 @@ class StudyDetailViewController: UITableViewController {
             cell.buttons?[0].backgroundColor = UIColor(hexString: color != nil ? color!.replacingOccurrences(of: "#", with: "") : "000000")
             cell.buttonDidClickBlock = {[weak self] (cell, button) in
                 guard let strongSelf = self else { return }
+                strongSelf.selectedCellIndex = index;
                 strongSelf.colorPicker.isHidden = !strongSelf.colorPicker.isHidden
                 if !strongSelf.colorPicker.isHidden {
                     let rect = tableView.rectForRow(at: indexPath)
@@ -267,6 +288,36 @@ class StudyDetailViewController: UITableViewController {
                     strongSelf.colorPicker.frame = CGRect(x: tableView.frame.width - 153 - 15, y: direction == .top ? rectOfCellInSuperview.midY - 294 + tableView.contentOffset.y  : rectOfCellInSuperview.midY + 19 + tableView.contentOffset.y , width: 153, height: 260)
                     strongSelf.colorPicker.direction = direction
                     strongSelf.selectedColorIndex = index - strongSelf.inputParameter.count
+                }
+            }
+        case .colorText:
+            let color = parameter["color"] as? String
+            cell.buttons?[0].backgroundColor = UIColor(hexString: color != nil ? color!.replacingOccurrences(of: "#", with: "") : "000000")
+            cell.buttonDidClickBlock = {[weak self] (cell, button) in
+                guard let strongSelf = self else { return }
+                strongSelf.selectedCellIndex = index;
+                strongSelf.colorPicker.isHidden = !strongSelf.colorPicker.isHidden
+                if !strongSelf.colorPicker.isHidden {
+                    let rect = tableView.rectForRow(at: indexPath)
+                    var rectOfCellInSuperview = tableView.convert(rect, to: tableView.superview)
+                    rectOfCellInSuperview.origin.y -= 64
+                    let direction = rectOfCellInSuperview.midY >= tableView.frame.height / 2 ? ColorPickerView.Direction.top : ColorPickerView.Direction.bottom
+                    strongSelf.colorPicker.frame = CGRect(x: tableView.frame.width - 153 - 15, y: direction == .top ? rectOfCellInSuperview.midY - 294 + tableView.contentOffset.y  : rectOfCellInSuperview.midY + 19 + tableView.contentOffset.y , width: 153, height: 260)
+                    strongSelf.colorPicker.direction = direction
+                    strongSelf.selectedColorIndex = index - (strongSelf.inputParameter.count + strongSelf.outputParameter.count)
+                }
+            }
+            cell.textFields![0].keyboardType = .numberPad
+            cell.textFields?[0].text = String(parameter["value"] as? Int ?? 0)
+            cell.textFieldValueDidEndEditingBlock = {[weak self] (cell, textField) in
+                guard let strongSelf = self else { return }
+                let name = cell.labels![0].text ?? ""
+                for (index, var params) in strongSelf.paramParameter.enumerated() {
+                    if params["name"] as? String == name {
+                        params["value"] = Int(textField.text ?? "0")
+                        strongSelf.paramParameter![index] = params
+                        break
+                    }
                 }
             }
         }

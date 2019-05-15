@@ -29,7 +29,7 @@ class SearchStudiesViewController: UITableViewController {
     var addStudiesBlock: (([Study]) -> Void)?
     var removeStudiesBlock: (([Study]) -> Void)?
     var getAddedStudiesBlock: (() -> [Study])?
-    var getStudyParameterBlock: ((String) -> (input: Any?, output: Any?))?
+    var getStudyParameterBlock: ((String) -> (input: Any?, output: Any?, parameters: Any?))?
     var editStudiesBlock: ((Study) -> Void)?
     
     enum Studies: Int {
@@ -96,6 +96,7 @@ class SearchStudiesViewController: UITableViewController {
             let parameter = getStudyParameterBlock?(study.name)
             viewController?.inputParameter = parameter?.input as? [[String: Any]] ?? [[String: Any]]()
             viewController?.outputParameter = parameter?.output as? [[String: Any]] ?? [[String: Any]]()
+            viewController?.paramParameter = parameter?.parameters as? [[String: Any]] ?? [[String: Any]]()
             viewController?.editStudyBlock = {[weak self] (study)  in
                 guard let strongSelf = self else { return }
                 strongSelf.editStudiesBlock?(study)

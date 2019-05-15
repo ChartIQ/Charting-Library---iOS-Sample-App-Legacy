@@ -90,13 +90,13 @@ class ViewController: UIViewController {
             setupSearchStudiesController(viewController)
         }
     }
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: nil, completion: { context in
             self.chartIQView.resizeChart()
         })
     }
-    
+
     // MARK: - Layout
     
     func setupNavigationBar() {
@@ -316,11 +316,12 @@ class ViewController: UIViewController {
         }
         
         // Gets study parameter
-        viewController.getStudyParameterBlock = {[weak self] (study) -> (Any?, Any?) in
-            guard let strongSelf = self else { return (nil, nil)}
+        viewController.getStudyParameterBlock = {[weak self] (study) -> (Any?, Any?, Any?) in
+            guard let strongSelf = self else { return (nil, nil, nil)}
             let input = strongSelf.chartIQView.getStudyInputParameters(by: study)
-            let output = strongSelf.chartIQView.getStudyOutputParameters(by: study)
-            return (input, output)
+            let output = strongSelf.chartIQView.getStudyOutputsOrParameters(by: study, type: "outputs")
+            let parameters = strongSelf.chartIQView.getStudyOutputsOrParameters(by: study, type: "parameters")
+            return (input, output, parameters)
         }
         
         // Edits study parameter
@@ -333,6 +334,9 @@ class ViewController: UIViewController {
             study.outputs?.forEach({ (output) in
                 parameters[output.key] = String(describing: output.value)
             })
+            study.parameters?.forEach({ (param) in
+                parameters[param.key] = String(describing: param.value)
+            })
             strongSelf.chartIQView.setStudy(study.name, parameters: parameters)
         }
         
@@ -343,7 +347,6 @@ class ViewController: UIViewController {
         }
     }
 
-    
     func loadChartInitialData(symbol: String, period: Int, interval: String, completionHandler: @escaping ([ChartIQData]) -> Void) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"
@@ -394,12 +397,12 @@ class ViewController: UIViewController {
     func loadChartData(by params: ChartIQQuoteFeedParams, completionHandler: @escaping ([ChartIQData]) -> Void) {
         let urlString =
             "http://simulator.chartiq.com/datafeed?identifier=\(params.symbol)" +
-            "&startdate=\(params.startDate)" +
-            "\(params.endDate.isEmpty ? "" : "&enddate=\(params.endDate)")" +
-            "&interval=\(params.interval)" +
-            "&period=\(params.period)" +
-            "&extended=1" +
-            "&session=\(uuid)"
+                "&startdate=\(params.startDate)" +
+                "\(params.endDate.isEmpty ? "" : "&enddate=\(params.endDate)")" +
+                "&interval=\(params.interval)" +
+                "&period=\(params.period)" +
+                "&extended=1" +
+        		"&session=\(uuid)"
         guard let url = URL(string: urlString) else { return }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let strongSelf = self else { return }
@@ -539,15 +542,14 @@ extension ViewController: ChartIQDataSource {
 // MARK: - ChartIQDelegate
 
 extension ViewController: ChartIQDelegate {
-    
+
     func chartIQViewDidFinishLoading(_ chartIQView: ChartIQView) {
         func loadDefaultSymbol() {
             chartIQView.setRefreshInterval(refreshInterval)
-            chartIQView.setDataMethod(.pull)
             chartIQView.setSymbol(defaultSymbol)
+            chartIQView.setDataMethod(.pull)
         }
         
-        // load which fields you want to be announced when in accessibility mode
         func loadVoiceoverFields() {
             // set field to true if voiceover mode needs to announce the value
             let voiceoverFields: [String: Bool] = [ChartIQView.ChartIQQuoteFields.date.rawValue: true,
@@ -559,8 +561,9 @@ extension ViewController: ChartIQDelegate {
             
             chartIQView.setVoiceoverFields(voiceoverFields);
         }
-        loadDefaultSymbol()
         
+        
+        loadDefaultSymbol()
         loadVoiceoverFields()
     }
     
@@ -614,7 +617,7 @@ extension ViewController : UITableViewDataSource {
         return tableView == lineTableView ? Line(rawValue: section)!.count : Intervals(rawValue: section)!.intervalCount
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {        
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return tableView == lineTableView ? Line(rawValue: section)!.headerHeight : 1
     }
     
@@ -707,4 +710,3 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate,
         colorPickerView.isHidden = true
     }
 }
-

@@ -246,6 +246,18 @@ class SettingViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    @IBAction func showSetUserPromptUp() {
+        let alert = UIAlertController(title: "Enter username or email", message: "", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+        alert.addAction(UIAlertAction(title: "SetUser", style: .default, handler: { [weak alert] (_) in
+            let user = alert!.textFields![0].text ?? ""
+            UserDefaults.standard.set(user, forKey: "SetUser")
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {

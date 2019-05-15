@@ -7,363 +7,334 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0065DB561A8E3A524DB6A2F4CFCE908D /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38E438E08E98E4F5987DC4E326F535 /* Symbol.swift */; };
-		07051C8E1E806AC1BCCEE1F85A7B0F49 /* Pods-ChartIQDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70852C21DECA6C2B2D339F0609B7955E /* Pods-ChartIQDemoTests-dummy.m */; };
-		08946025931A3C9DA68B513D6790005D /* Pods-ChartIQDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D870CEECBA6C28E9F13E4A7F17E4542A /* Pods-ChartIQDemoUITests-dummy.m */; };
-		08F2759BDC59C7E97CC85E7039CBDCA8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E11BE0ED69B2FD673B064EF279EC7F /* UIColor+Extension.swift */; };
-		196DF46DE3E4F09CF3CB1A2B80CF60BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		1B79EEC6D14F79D81B7C96CB003C602D /* Pods-ChartIQDemoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 11CDB620DEDB7E6DD249B4EDAA56B676 /* Pods-ChartIQDemoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FB683357035DE354DC61947E56E7D9F /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B747358580BFF16F8D2DC679BEFF76E3 /* URLSession+Extension.swift */; };
-		23E63EB281C93BBF726588337184C40F /* ChartIQ-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF83DBD762D01BAA2225D7EFE919B93A /* ChartIQ-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39008EBCC55955F1C6BE5AB8A5301F2A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415973B1759FA211A3A2614DCC45BDAB /* String+Extension.swift */; };
-		40F3C2C98205182E11BAFB9F3681BC9F /* ChartIQ-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 403EFC45CF8960E2F1F651A81235AAD7 /* ChartIQ-dummy.m */; };
-		41D86D233D020366CEB00D6EDE315D50 /* Pods-ChartIQDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A3A705997160EE18B69082C1801EA /* Pods-ChartIQDemo-dummy.m */; };
-		4F53D3DB452444367A3F75EB5B1E7A73 /* ChartIQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA7AE793B5E6C85895B06207A174A9 /* ChartIQView.swift */; };
-		7AD545D67B17BD59E579A1A970961337 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E21C19BE81A927737BE59B0248182 /* UIDevice+Extension.swift */; };
-		7D2D3BDEC0FD807D76036A01C66B3FBC /* Pods-ChartIQDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3ED92C0BE7C37B03216BC7D3790CFAF /* Pods-ChartIQDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		824CBE98136A192584E8EDD7EB183C86 /* ChartIQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 79213B5B7637AF31C1CDAFC68A800F87 /* ChartIQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82C7AD33318C4CF8C7BC883660C741F5 /* Study.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4129E6CC2507217B4E31B50F841F02 /* Study.swift */; };
-		B100E14C591639FC8EFACF4511964803 /* ChartUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC10F22F91506C6311E2C565F15811C /* ChartUtils.swift */; };
-		C24F4B4949EB5D62FF373B0C2EA0161C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		C7364C7BE4871E4555DA5CEDE25C5AF8 /* CrosshairHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601633AEEF384C8EDA0003895F35B790 /* CrosshairHUD.swift */; };
-		D2CAF90540C6A887A0A6C543EB705620 /* Pods-ChartIQDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DB629A794F76DB579F8B5A1DF9F8C22 /* Pods-ChartIQDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEAF4C678AC93E2F4DF7EC20C3FA8E7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		E3C540E5B9880F8947AB53D7EB80D429 /* ChartIQData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF821A939E06579FC89D8F27F9DBF67 /* ChartIQData.swift */; };
-		F60E92160FE3A19BDA5ECCF63EB95CF9 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A9DD1D030F2EFC2468D8974650DD0 /* WKWebView+Extension.swift */; };
-		FC018DCF87012FC60D618009D2237A96 /* ChartIQQuoteFeedParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593D31FD0D00A0E4D7E9CF854296D25 /* ChartIQQuoteFeedParams.swift */; };
-		FC235C8FB8F81E076722434AFDEF11C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		097F8FCDEDEEF2D493D925D55F69FC7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		1870988C23A54ACCFDACA9C9AD506D7B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4FB0AE167ACD976E2A1DE146344B1 /* UIColor+Extension.swift */; };
+		1EF739AF3EDE5EF52BB254773BEDE5C9 /* ChartIQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF6AF3D4B79D0DBDD276A4D58C14DC /* ChartIQView.swift */; };
+		2668F94229E35F25C369C7E79FCD43C1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785B8A94F7F81D9299B8D7DE92E6665 /* String+Extension.swift */; };
+		36C7EBBF52D9EDF4F80ECE97013C5BAE /* Pods-ChartIQDemoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44D6F51B0350146E960412F60140D6D3 /* Pods-ChartIQDemoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49EF4398767D158D893FB3A24824B4DA /* ChartIQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 282A7AF3928B017FEFA58EE7B0BE5F8E /* ChartIQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5098519AB7229648B372EF6A3F05F805 /* CrosshairHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FE1C4369A8373DC1A7AC9AB05E3258 /* CrosshairHUD.swift */; };
+		53E1046FA7B2C5BFE6F87CE023EA7BE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		54B2BB57E89CC95BD84003D9C975E14B /* Pods-ChartIQDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51B0303D06FD47E94D5887319911AD5E /* Pods-ChartIQDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56968A0C655E51E3BD19F53C18C7B71A /* ChartUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2689A817D88D14304B448798DBFEB17 /* ChartUtils.swift */; };
+		5ECC7265968F4114AB6F6C5DCF744FE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		6B956BEB0311AA43C3EBF6C8AE2CADBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		8DBECC733909770A02C4049B13CB976A /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4838B9EC98DCE3447596E6E6C7275 /* URLSession+Extension.swift */; };
+		907C72E5C888266C3A3A21E6FE6D8793 /* ChartIQ-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B7B60ABC96E02302247F03C6491F17 /* ChartIQ-dummy.m */; };
+		921E0C2EDFC0117729FB1A73446268B8 /* Pods-ChartIQDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7D05BEB6DBEF90A55DF448A301D89 /* Pods-ChartIQDemoUITests-dummy.m */; };
+		A9001AD94B5E15BE83E1398FA494A728 /* Pods-ChartIQDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40BC4A5152A6DFBFA484B87344999522 /* Pods-ChartIQDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA229F6A8FED821D1B4A532C16AC7478 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB034563E006F1509FBE5597DAFE3BBD /* UIDevice+Extension.swift */; };
+		C6E8ABFCB1C6D30E5274D4E7738C1A94 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DED91D51AA960244BCC5F01ED36A198 /* WKWebView+Extension.swift */; };
+		C93F656213B7F735E21AEF7173105AE8 /* Pods-ChartIQDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFC062C1C0C1CAE79F682EFF6DFD40B /* Pods-ChartIQDemoTests-dummy.m */; };
+		CAB5998B0EE2DB5E6DDFD6B537B0968D /* ChartIQData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1E1984D6EF9BB05767FBE7D4417B1 /* ChartIQData.swift */; };
+		D9E60FDD39756953AD6BB5F774FD9FEB /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6688483499E84873681EFA20A18AA4E8 /* Symbol.swift */; };
+		DB26F1DC2481F219164950D08A2E3D03 /* ChartIQ-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A27AA167D38ACC0B60532C4B9B875236 /* ChartIQ-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED984C67A9C6C86A92AD9932CA400A15 /* Pods-ChartIQDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC877EC2166D75E69B2B039151D7C60 /* Pods-ChartIQDemo-dummy.m */; };
+		F09CD4EB157CA9AB5636C97E45A83A68 /* Study.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA65EFFA69DE4216051A5DFB731DB94 /* Study.swift */; };
+		FE0F2F846D6AD4E7836AE7E8E14A4E85 /* ChartIQQuoteFeedParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953AF0774813B9BDE32081834A8722F6 /* ChartIQQuoteFeedParams.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		037EA5A060FF58F9C3E39EA408E00B9F /* PBXContainerItemProxy */ = {
+		99FF652931DA8FD96B281BC558325D70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5985DD051802F9D312C35C9CFA1B3D14;
+			remoteGlobalIDString = 9441AD091F1F035891D6C47175CCEC32;
 			remoteInfo = "Pods-ChartIQDemo";
 		};
-		BB2B01116AF63078526DD724E1FA3131 /* PBXContainerItemProxy */ = {
+		B72A924D722D90B0E39B5B82582D076D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5985DD051802F9D312C35C9CFA1B3D14;
+			remoteGlobalIDString = 9441AD091F1F035891D6C47175CCEC32;
 			remoteInfo = "Pods-ChartIQDemo";
 		};
-		CBC3BD8F7B33D04A3675E73FF0DAAEEF /* PBXContainerItemProxy */ = {
+		C95474B03CB79C652A2FDCC816BF748D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 713836611B46AD0316C42C9A8E83A7AA;
+			remoteGlobalIDString = 1EDE2E16EFF23E5FD304FD6483EA9DFA;
 			remoteInfo = ChartIQ;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0245099A0E84B8D63BC0F488F65C166C /* Pods-ChartIQDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChartIQDemoTests.modulemap"; sourceTree = "<group>"; };
-		0E3A3A705997160EE18B69082C1801EA /* Pods-ChartIQDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemo-dummy.m"; sourceTree = "<group>"; };
-		11CDB620DEDB7E6DD249B4EDAA56B676 /* Pods-ChartIQDemoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChartIQDemoUITests-umbrella.h"; sourceTree = "<group>"; };
-		19089C658CB74CA8912492EBE92658B8 /* ChartIQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChartIQ.framework; path = ChartIQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B454CB5892A49F2A47FA3D913CD8F03 /* Pods-ChartIQDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		1D30278EA015E1C8E2D0F81FEF1BD9F2 /* Pods-ChartIQDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChartIQDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1FA674A298BCFC131C4D092FACEE02DE /* Pods-ChartIQDemoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChartIQDemoTests-frameworks.sh"; sourceTree = "<group>"; };
-		25F39569544366B2FF680622CEA6376D /* Pods-ChartIQDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		30CB43756C3480D5064078858D31905C /* Pods-ChartIQDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		32578DADED1EBD18F19395C8B90FB399 /* Pods-ChartIQDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		338E68F5D4EFA074EF87995879641870 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3459E779D7EBA533A9A5D23459896E80 /* Pods-ChartIQDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChartIQDemo-frameworks.sh"; sourceTree = "<group>"; };
-		38A60EB6E1C1D95E1002EBB6F9647863 /* Pods-ChartIQDemoUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChartIQDemoUITests-frameworks.sh"; sourceTree = "<group>"; };
-		3D2A792E1FF727F77169013FD9BE2049 /* Pods-ChartIQDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChartIQDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		403EFC45CF8960E2F1F651A81235AAD7 /* ChartIQ-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartIQ-dummy.m"; sourceTree = "<group>"; };
-		415973B1759FA211A3A2614DCC45BDAB /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "ChartIQ/Extension/String+Extension.swift"; sourceTree = "<group>"; };
-		4B4234F1806B0F99BE827135E0B36AD1 /* ChartIQ.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartIQ.xcconfig; sourceTree = "<group>"; };
-		5593D31FD0D00A0E4D7E9CF854296D25 /* ChartIQQuoteFeedParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartIQQuoteFeedParams.swift; path = ChartIQ/Charts/Model/ChartIQQuoteFeedParams.swift; sourceTree = "<group>"; };
-		5DC10F22F91506C6311E2C565F15811C /* ChartUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartUtils.swift; path = ChartIQ/Charts/Utils/ChartUtils.swift; sourceTree = "<group>"; };
-		5DF821A939E06579FC89D8F27F9DBF67 /* ChartIQData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartIQData.swift; path = ChartIQ/Charts/Model/ChartIQData.swift; sourceTree = "<group>"; };
-		601633AEEF384C8EDA0003895F35B790 /* CrosshairHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrosshairHUD.swift; path = ChartIQ/Charts/Model/CrosshairHUD.swift; sourceTree = "<group>"; };
-		66EA7AE793B5E6C85895B06207A174A9 /* ChartIQView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartIQView.swift; path = ChartIQ/Charts/ChartIQView.swift; sourceTree = "<group>"; };
-		6DB629A794F76DB579F8B5A1DF9F8C22 /* Pods-ChartIQDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChartIQDemo-umbrella.h"; sourceTree = "<group>"; };
-		706F1A1A60127255818529FA44A2732A /* Pods-ChartIQDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemo.release.xcconfig"; sourceTree = "<group>"; };
-		70852C21DECA6C2B2D339F0609B7955E /* Pods-ChartIQDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemoTests-dummy.m"; sourceTree = "<group>"; };
-		70BDDA023919B71ECF3A0EEF0B213DCA /* Pods-ChartIQDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChartIQDemo.modulemap"; sourceTree = "<group>"; };
-		79213B5B7637AF31C1CDAFC68A800F87 /* ChartIQ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChartIQ.h; path = "ChartIQ/Supporting Files/ChartIQ.h"; sourceTree = "<group>"; };
-		7CE027C963A206A3BA121383DE987D78 /* Pods_ChartIQDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemoUITests.framework; path = "Pods-ChartIQDemoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8958D3414FD8A2E3F069571081F61CE5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C4129E6CC2507217B4E31B50F841F02 /* Study.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Study.swift; path = ChartIQ/Charts/Model/Study.swift; sourceTree = "<group>"; };
-		939778C79CB7F0A310183470AD695D70 /* ChartIQ.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChartIQ.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96AD52FD85AE1BD8F3521B4C0AD9DEF6 /* Pods-ChartIQDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9D48EA47F1834200F6127CE7CB7C2B24 /* Pods-ChartIQDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChartIQDemo-resources.sh"; sourceTree = "<group>"; };
-		9E38E438E08E98E4F5987DC4E326F535 /* Symbol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Symbol.swift; path = ChartIQ/Charts/Model/Symbol.swift; sourceTree = "<group>"; };
-		AE028E469BD362643EA1123A019FD045 /* Pods-ChartIQDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B2B283834A7592CA369D61A6F36A46CE /* Pods-ChartIQDemoUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChartIQDemoUITests-resources.sh"; sourceTree = "<group>"; };
-		B5C13699914781150DED04A5ED90B2EB /* Pods-ChartIQDemoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChartIQDemoUITests.modulemap"; sourceTree = "<group>"; };
-		B747358580BFF16F8D2DC679BEFF76E3 /* URLSession+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSession+Extension.swift"; path = "ChartIQ/Extension/URLSession+Extension.swift"; sourceTree = "<group>"; };
-		BF83DBD762D01BAA2225D7EFE919B93A /* ChartIQ-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartIQ-umbrella.h"; sourceTree = "<group>"; };
-		C26E21C19BE81A927737BE59B0248182 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extension.swift"; path = "ChartIQ/Extension/UIDevice+Extension.swift"; sourceTree = "<group>"; };
-		C65C96CDAF6AC3389E63A9B76DEEAD8F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D216D210A129DAF1D677C80288924C4F /* Pods-ChartIQDemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChartIQDemoTests-resources.sh"; sourceTree = "<group>"; };
-		D5BA46F397124A10AFA14F5247E7F772 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D7B93DA0A7F3C3E7A5B9CFC663CE831F /* Pods_ChartIQDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemo.framework; path = "Pods-ChartIQDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D870CEECBA6C28E9F13E4A7F17E4542A /* Pods-ChartIQDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemoUITests-dummy.m"; sourceTree = "<group>"; };
-		E51A9DD1D030F2EFC2468D8974650DD0 /* WKWebView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WKWebView+Extension.swift"; path = "ChartIQ/Extension/WKWebView+Extension.swift"; sourceTree = "<group>"; };
-		EA848ED2B2506A0F216C925923584C09 /* Pods-ChartIQDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		EC4ABBDE30D42808ECBE170213FC4389 /* Pods_ChartIQDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemoTests.framework; path = "Pods-ChartIQDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1E11BE0ED69B2FD673B064EF279EC7F /* UIColor+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "ChartIQ/Extension/UIColor+Extension.swift"; sourceTree = "<group>"; };
-		F25E2105B8BE42415049BA5635176B36 /* Pods-ChartIQDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		F3ED92C0BE7C37B03216BC7D3790CFAF /* Pods-ChartIQDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChartIQDemoTests-umbrella.h"; sourceTree = "<group>"; };
-		FB26AE38DB9C233B573C58D5FB5748F9 /* Pods-ChartIQDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChartIQDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FBCB1E0A5DB23871D9441DB6626A46B4 /* ChartIQ-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartIQ-prefix.pch"; sourceTree = "<group>"; };
+		17079E86DAE0A9909AA8196A6208B288 /* ChartIQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChartIQ.framework; path = ChartIQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21F7D05BEB6DBEF90A55DF448A301D89 /* Pods-ChartIQDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemoUITests-dummy.m"; sourceTree = "<group>"; };
+		282A7AF3928B017FEFA58EE7B0BE5F8E /* ChartIQ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChartIQ.h; path = "ChartIQ/Supporting Files/ChartIQ.h"; sourceTree = "<group>"; };
+		28D4838B9EC98DCE3447596E6E6C7275 /* URLSession+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSession+Extension.swift"; path = "ChartIQ/Extension/URLSession+Extension.swift"; sourceTree = "<group>"; };
+		28FE1C4369A8373DC1A7AC9AB05E3258 /* CrosshairHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrosshairHUD.swift; path = ChartIQ/Charts/Model/CrosshairHUD.swift; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		360F3C4411A20768DDC41F1835A77961 /* Pods-ChartIQDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemo-Info.plist"; sourceTree = "<group>"; };
+		40BC4A5152A6DFBFA484B87344999522 /* Pods-ChartIQDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChartIQDemo-umbrella.h"; sourceTree = "<group>"; };
+		44D6F51B0350146E960412F60140D6D3 /* Pods-ChartIQDemoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChartIQDemoUITests-umbrella.h"; sourceTree = "<group>"; };
+		4874929AC9F94A63D1352A00C4A71997 /* Pods_ChartIQDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemo.framework; path = "Pods-ChartIQDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4974609B42406A1889DD88EE96D129F4 /* Pods-ChartIQDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChartIQDemo-frameworks.sh"; sourceTree = "<group>"; };
+		50C310E2C3D39D84B10B3D06E7E8B2DC /* Pods_ChartIQDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemoTests.framework; path = "Pods-ChartIQDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51B0303D06FD47E94D5887319911AD5E /* Pods-ChartIQDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChartIQDemoTests-umbrella.h"; sourceTree = "<group>"; };
+		5785B8A94F7F81D9299B8D7DE92E6665 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "ChartIQ/Extension/String+Extension.swift"; sourceTree = "<group>"; };
+		5DED91D51AA960244BCC5F01ED36A198 /* WKWebView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WKWebView+Extension.swift"; path = "ChartIQ/Extension/WKWebView+Extension.swift"; sourceTree = "<group>"; };
+		606AEA32FBDDC8C9D8F4C06DC19FDD76 /* Pods-ChartIQDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChartIQDemo.modulemap"; sourceTree = "<group>"; };
+		6688483499E84873681EFA20A18AA4E8 /* Symbol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Symbol.swift; path = ChartIQ/Charts/Model/Symbol.swift; sourceTree = "<group>"; };
+		68721B1F2EA0F091F3CF36ADC1B0E991 /* Pods_ChartIQDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemoUITests.framework; path = "Pods-ChartIQDemoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC1E1984D6EF9BB05767FBE7D4417B1 /* ChartIQData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartIQData.swift; path = ChartIQ/Charts/Model/ChartIQData.swift; sourceTree = "<group>"; };
+		6EC877EC2166D75E69B2B039151D7C60 /* Pods-ChartIQDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemo-dummy.m"; sourceTree = "<group>"; };
+		6F9EAFB4673E6B9C0477BAB4B56B2728 /* Pods-ChartIQDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		70321CA318194F6AFD183A6D32E99C12 /* Pods-ChartIQDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		74B7B60ABC96E02302247F03C6491F17 /* ChartIQ-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartIQ-dummy.m"; sourceTree = "<group>"; };
+		77AB7EA728BFA5A2D7BB7036066BEC92 /* ChartIQ.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChartIQ.modulemap; sourceTree = "<group>"; };
+		7C2B3D04CDFC3E536C34346CDFAAE66F /* Pods-ChartIQDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChartIQDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		85F5822051089D1F3724EBA67A08B506 /* Pods-ChartIQDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChartIQDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8CB473947ECE2F8D4B4AFD424171DC37 /* Pods-ChartIQDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		8DA65EFFA69DE4216051A5DFB731DB94 /* Study.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Study.swift; path = ChartIQ/Charts/Model/Study.swift; sourceTree = "<group>"; };
+		953AF0774813B9BDE32081834A8722F6 /* ChartIQQuoteFeedParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartIQQuoteFeedParams.swift; path = ChartIQ/Charts/Model/ChartIQQuoteFeedParams.swift; sourceTree = "<group>"; };
+		97824144F678EC62FFD19A766EA5D2A0 /* Pods-ChartIQDemoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemoUITests-Info.plist"; sourceTree = "<group>"; };
+		9CDF6AF3D4B79D0DBDD276A4D58C14DC /* ChartIQView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartIQView.swift; path = ChartIQ/Charts/ChartIQView.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A27AA167D38ACC0B60532C4B9B875236 /* ChartIQ-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartIQ-umbrella.h"; sourceTree = "<group>"; };
+		AA4FB8CA86AE27848BB3D1AD402518FF /* Pods-ChartIQDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemo.release.xcconfig"; sourceTree = "<group>"; };
+		ABA7ABCDB1CB956D5D1B0DD8BE5270F1 /* Pods-ChartIQDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChartIQDemoTests.modulemap"; sourceTree = "<group>"; };
+		AC22422FB7F6E021A64263AE7E587086 /* ChartIQ-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChartIQ-Info.plist"; sourceTree = "<group>"; };
+		AFD3C16B1D310884A08C52DE1D497CDC /* Pods-ChartIQDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B31EF8244E3CB70D9D1F5B81FADA3965 /* Pods-ChartIQDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B7C684FDFFC908B9178CCB770596D170 /* Pods-ChartIQDemoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChartIQDemoUITests.modulemap"; sourceTree = "<group>"; };
+		BB034563E006F1509FBE5597DAFE3BBD /* UIDevice+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extension.swift"; path = "ChartIQ/Extension/UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		C1E12A86EC6D2CC24EEBBF50F6A7CE56 /* Pods-ChartIQDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C4ADAB2A1F02EF3618C7FC27FC899E27 /* Pods-ChartIQDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChartIQDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C7EB9B9824035C5213AA014AE7E6A63E /* Pods-ChartIQDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9D4FB0AE167ACD976E2A1DE146344B1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "ChartIQ/Extension/UIColor+Extension.swift"; sourceTree = "<group>"; };
+		D3BC0C7807F05C4A33A527DD6071D5AC /* Pods-ChartIQDemoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemoTests-Info.plist"; sourceTree = "<group>"; };
+		D60A82DE8C96B30392610289E9C1D69B /* Pods-ChartIQDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E2689A817D88D14304B448798DBFEB17 /* ChartUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartUtils.swift; path = ChartIQ/Charts/Utils/ChartUtils.swift; sourceTree = "<group>"; };
+		E6A62BBBE78F6CECFD75F717E819BBA1 /* ChartIQ-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartIQ-prefix.pch"; sourceTree = "<group>"; };
+		E8A1E85084FE75264516016D06C37209 /* ChartIQ.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartIQ.xcconfig; sourceTree = "<group>"; };
+		FFFC062C1C0C1CAE79F682EFF6DFD40B /* Pods-ChartIQDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemoTests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		54B2573D53271179DF2E2306A8B69BC9 /* Frameworks */ = {
+		01EFC8A4A452903E658A8E5F7ABE89CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC235C8FB8F81E076722434AFDEF11C0 /* Foundation.framework in Frameworks */,
+				097F8FCDEDEEF2D493D925D55F69FC7D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57E5DBA76B469FD58AE79CFCBB689778 /* Frameworks */ = {
+		8C574D717B0A8A4FA7F5D72E8F50D7DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				196DF46DE3E4F09CF3CB1A2B80CF60BF /* Foundation.framework in Frameworks */,
+				6B956BEB0311AA43C3EBF6C8AE2CADBC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5171B9276C8DBA57AD781C86616AEEE /* Frameworks */ = {
+		AE04B25DA358F86AFE5ACFD8A7B019D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C24F4B4949EB5D62FF373B0C2EA0161C /* Foundation.framework in Frameworks */,
+				53E1046FA7B2C5BFE6F87CE023EA7BE1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F00A90B21D4FFF4AACEB179CDB083185 /* Frameworks */ = {
+		E26D054B5F1328D340A831FBE5399482 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEAF4C678AC93E2F4DF7EC20C3FA8E7E /* Foundation.framework in Frameworks */,
+				5ECC7265968F4114AB6F6C5DCF744FE9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12DB545C71528D822AD6CB5B464BA73A /* Pods-ChartIQDemoUITests */ = {
+		16B109EF0D307C02BF6306F7C0C04BFA /* Pods-ChartIQDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				338E68F5D4EFA074EF87995879641870 /* Info.plist */,
-				B5C13699914781150DED04A5ED90B2EB /* Pods-ChartIQDemoUITests.modulemap */,
-				3D2A792E1FF727F77169013FD9BE2049 /* Pods-ChartIQDemoUITests-acknowledgements.markdown */,
-				AE028E469BD362643EA1123A019FD045 /* Pods-ChartIQDemoUITests-acknowledgements.plist */,
-				D870CEECBA6C28E9F13E4A7F17E4542A /* Pods-ChartIQDemoUITests-dummy.m */,
-				38A60EB6E1C1D95E1002EBB6F9647863 /* Pods-ChartIQDemoUITests-frameworks.sh */,
-				B2B283834A7592CA369D61A6F36A46CE /* Pods-ChartIQDemoUITests-resources.sh */,
-				11CDB620DEDB7E6DD249B4EDAA56B676 /* Pods-ChartIQDemoUITests-umbrella.h */,
-				32578DADED1EBD18F19395C8B90FB399 /* Pods-ChartIQDemoUITests.debug.xcconfig */,
-				96AD52FD85AE1BD8F3521B4C0AD9DEF6 /* Pods-ChartIQDemoUITests.release.xcconfig */,
+				B7C684FDFFC908B9178CCB770596D170 /* Pods-ChartIQDemoUITests.modulemap */,
+				7C2B3D04CDFC3E536C34346CDFAAE66F /* Pods-ChartIQDemoUITests-acknowledgements.markdown */,
+				D60A82DE8C96B30392610289E9C1D69B /* Pods-ChartIQDemoUITests-acknowledgements.plist */,
+				21F7D05BEB6DBEF90A55DF448A301D89 /* Pods-ChartIQDemoUITests-dummy.m */,
+				97824144F678EC62FFD19A766EA5D2A0 /* Pods-ChartIQDemoUITests-Info.plist */,
+				44D6F51B0350146E960412F60140D6D3 /* Pods-ChartIQDemoUITests-umbrella.h */,
+				C7EB9B9824035C5213AA014AE7E6A63E /* Pods-ChartIQDemoUITests.debug.xcconfig */,
+				C1E12A86EC6D2CC24EEBBF50F6A7CE56 /* Pods-ChartIQDemoUITests.release.xcconfig */,
 			);
 			name = "Pods-ChartIQDemoUITests";
 			path = "Target Support Files/Pods-ChartIQDemoUITests";
 			sourceTree = "<group>";
 		};
-		34C70CE095506CAF8E7DA2E1974391E0 /* Pods-ChartIQDemoTests */ = {
+		55F9410985A96835C858414D533D258B /* Pods-ChartIQDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C65C96CDAF6AC3389E63A9B76DEEAD8F /* Info.plist */,
-				0245099A0E84B8D63BC0F488F65C166C /* Pods-ChartIQDemoTests.modulemap */,
-				FB26AE38DB9C233B573C58D5FB5748F9 /* Pods-ChartIQDemoTests-acknowledgements.markdown */,
-				30CB43756C3480D5064078858D31905C /* Pods-ChartIQDemoTests-acknowledgements.plist */,
-				70852C21DECA6C2B2D339F0609B7955E /* Pods-ChartIQDemoTests-dummy.m */,
-				1FA674A298BCFC131C4D092FACEE02DE /* Pods-ChartIQDemoTests-frameworks.sh */,
-				D216D210A129DAF1D677C80288924C4F /* Pods-ChartIQDemoTests-resources.sh */,
-				F3ED92C0BE7C37B03216BC7D3790CFAF /* Pods-ChartIQDemoTests-umbrella.h */,
-				25F39569544366B2FF680622CEA6376D /* Pods-ChartIQDemoTests.debug.xcconfig */,
-				F25E2105B8BE42415049BA5635176B36 /* Pods-ChartIQDemoTests.release.xcconfig */,
-			);
-			name = "Pods-ChartIQDemoTests";
-			path = "Target Support Files/Pods-ChartIQDemoTests";
-			sourceTree = "<group>";
-		};
-		44D5347904CF754D6785B84253F2574A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		591E0795BF1ECF49F4CF67AB7BCDF782 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A991FC8BDC493463E4A9DBA785649146 /* ChartIQ */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		756B4CF7DBD76B41EDAF4D118AD41816 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B138B64B418C01C14DE56F85AB70151E /* Pods-ChartIQDemo */,
-				34C70CE095506CAF8E7DA2E1974391E0 /* Pods-ChartIQDemoTests */,
-				12DB545C71528D822AD6CB5B464BA73A /* Pods-ChartIQDemoUITests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		763DC811E6BA3D39E350429F888E9723 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				19089C658CB74CA8912492EBE92658B8 /* ChartIQ.framework */,
-				D7B93DA0A7F3C3E7A5B9CFC663CE831F /* Pods_ChartIQDemo.framework */,
-				EC4ABBDE30D42808ECBE170213FC4389 /* Pods_ChartIQDemoTests.framework */,
-				7CE027C963A206A3BA121383DE987D78 /* Pods_ChartIQDemoUITests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				591E0795BF1ECF49F4CF67AB7BCDF782 /* Pods */,
-				763DC811E6BA3D39E350429F888E9723 /* Products */,
-				756B4CF7DBD76B41EDAF4D118AD41816 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		A991FC8BDC493463E4A9DBA785649146 /* ChartIQ */ = {
-			isa = PBXGroup;
-			children = (
-				79213B5B7637AF31C1CDAFC68A800F87 /* ChartIQ.h */,
-				5DF821A939E06579FC89D8F27F9DBF67 /* ChartIQData.swift */,
-				5593D31FD0D00A0E4D7E9CF854296D25 /* ChartIQQuoteFeedParams.swift */,
-				66EA7AE793B5E6C85895B06207A174A9 /* ChartIQView.swift */,
-				5DC10F22F91506C6311E2C565F15811C /* ChartUtils.swift */,
-				601633AEEF384C8EDA0003895F35B790 /* CrosshairHUD.swift */,
-				415973B1759FA211A3A2614DCC45BDAB /* String+Extension.swift */,
-				8C4129E6CC2507217B4E31B50F841F02 /* Study.swift */,
-				9E38E438E08E98E4F5987DC4E326F535 /* Symbol.swift */,
-				F1E11BE0ED69B2FD673B064EF279EC7F /* UIColor+Extension.swift */,
-				C26E21C19BE81A927737BE59B0248182 /* UIDevice+Extension.swift */,
-				B747358580BFF16F8D2DC679BEFF76E3 /* URLSession+Extension.swift */,
-				E51A9DD1D030F2EFC2468D8974650DD0 /* WKWebView+Extension.swift */,
-				FE079677938CD526A2BEEB18FE3026FD /* Support Files */,
-			);
-			name = ChartIQ;
-			path = ChartIQ;
-			sourceTree = "<group>";
-		};
-		B138B64B418C01C14DE56F85AB70151E /* Pods-ChartIQDemo */ = {
-			isa = PBXGroup;
-			children = (
-				D5BA46F397124A10AFA14F5247E7F772 /* Info.plist */,
-				70BDDA023919B71ECF3A0EEF0B213DCA /* Pods-ChartIQDemo.modulemap */,
-				1D30278EA015E1C8E2D0F81FEF1BD9F2 /* Pods-ChartIQDemo-acknowledgements.markdown */,
-				EA848ED2B2506A0F216C925923584C09 /* Pods-ChartIQDemo-acknowledgements.plist */,
-				0E3A3A705997160EE18B69082C1801EA /* Pods-ChartIQDemo-dummy.m */,
-				3459E779D7EBA533A9A5D23459896E80 /* Pods-ChartIQDemo-frameworks.sh */,
-				9D48EA47F1834200F6127CE7CB7C2B24 /* Pods-ChartIQDemo-resources.sh */,
-				6DB629A794F76DB579F8B5A1DF9F8C22 /* Pods-ChartIQDemo-umbrella.h */,
-				1B454CB5892A49F2A47FA3D913CD8F03 /* Pods-ChartIQDemo.debug.xcconfig */,
-				706F1A1A60127255818529FA44A2732A /* Pods-ChartIQDemo.release.xcconfig */,
+				606AEA32FBDDC8C9D8F4C06DC19FDD76 /* Pods-ChartIQDemo.modulemap */,
+				85F5822051089D1F3724EBA67A08B506 /* Pods-ChartIQDemo-acknowledgements.markdown */,
+				70321CA318194F6AFD183A6D32E99C12 /* Pods-ChartIQDemo-acknowledgements.plist */,
+				6EC877EC2166D75E69B2B039151D7C60 /* Pods-ChartIQDemo-dummy.m */,
+				4974609B42406A1889DD88EE96D129F4 /* Pods-ChartIQDemo-frameworks.sh */,
+				360F3C4411A20768DDC41F1835A77961 /* Pods-ChartIQDemo-Info.plist */,
+				40BC4A5152A6DFBFA484B87344999522 /* Pods-ChartIQDemo-umbrella.h */,
+				AFD3C16B1D310884A08C52DE1D497CDC /* Pods-ChartIQDemo.debug.xcconfig */,
+				AA4FB8CA86AE27848BB3D1AD402518FF /* Pods-ChartIQDemo.release.xcconfig */,
 			);
 			name = "Pods-ChartIQDemo";
 			path = "Target Support Files/Pods-ChartIQDemo";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		5B54BBFF84A8C3F6CBB74B64605111EB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				44D5347904CF754D6785B84253F2574A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FE079677938CD526A2BEEB18FE3026FD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				939778C79CB7F0A310183470AD695D70 /* ChartIQ.modulemap */,
-				4B4234F1806B0F99BE827135E0B36AD1 /* ChartIQ.xcconfig */,
-				403EFC45CF8960E2F1F651A81235AAD7 /* ChartIQ-dummy.m */,
-				FBCB1E0A5DB23871D9441DB6626A46B4 /* ChartIQ-prefix.pch */,
-				BF83DBD762D01BAA2225D7EFE919B93A /* ChartIQ-umbrella.h */,
-				8958D3414FD8A2E3F069571081F61CE5 /* Info.plist */,
+				77AB7EA728BFA5A2D7BB7036066BEC92 /* ChartIQ.modulemap */,
+				E8A1E85084FE75264516016D06C37209 /* ChartIQ.xcconfig */,
+				74B7B60ABC96E02302247F03C6491F17 /* ChartIQ-dummy.m */,
+				AC22422FB7F6E021A64263AE7E587086 /* ChartIQ-Info.plist */,
+				E6A62BBBE78F6CECFD75F717E819BBA1 /* ChartIQ-prefix.pch */,
+				A27AA167D38ACC0B60532C4B9B875236 /* ChartIQ-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ChartIQ";
 			sourceTree = "<group>";
 		};
+		93E35698D432C7F5C53AC083795B7E3C /* Pods-ChartIQDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7ABCDB1CB956D5D1B0DD8BE5270F1 /* Pods-ChartIQDemoTests.modulemap */,
+				C4ADAB2A1F02EF3618C7FC27FC899E27 /* Pods-ChartIQDemoTests-acknowledgements.markdown */,
+				6F9EAFB4673E6B9C0477BAB4B56B2728 /* Pods-ChartIQDemoTests-acknowledgements.plist */,
+				FFFC062C1C0C1CAE79F682EFF6DFD40B /* Pods-ChartIQDemoTests-dummy.m */,
+				D3BC0C7807F05C4A33A527DD6071D5AC /* Pods-ChartIQDemoTests-Info.plist */,
+				51B0303D06FD47E94D5887319911AD5E /* Pods-ChartIQDemoTests-umbrella.h */,
+				B31EF8244E3CB70D9D1F5B81FADA3965 /* Pods-ChartIQDemoTests.debug.xcconfig */,
+				8CB473947ECE2F8D4B4AFD424171DC37 /* Pods-ChartIQDemoTests.release.xcconfig */,
+			);
+			name = "Pods-ChartIQDemoTests";
+			path = "Target Support Files/Pods-ChartIQDemoTests";
+			sourceTree = "<group>";
+		};
+		A4BD5BDDC96D211D4D2ADA23209B69FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE8176DD5A9039A1A6D220B378916FE9 /* ChartIQ */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CA2C7656C81703373FFBB87E60EED191 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17079E86DAE0A9909AA8196A6208B288 /* ChartIQ.framework */,
+				4874929AC9F94A63D1352A00C4A71997 /* Pods_ChartIQDemo.framework */,
+				50C310E2C3D39D84B10B3D06E7E8B2DC /* Pods_ChartIQDemoTests.framework */,
+				68721B1F2EA0F091F3CF36ADC1B0E991 /* Pods_ChartIQDemoUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				A4BD5BDDC96D211D4D2ADA23209B69FC /* Pods */,
+				CA2C7656C81703373FFBB87E60EED191 /* Products */,
+				F8E1AFCC0AB63073C074CA9DB4D0FDAF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE8176DD5A9039A1A6D220B378916FE9 /* ChartIQ */ = {
+			isa = PBXGroup;
+			children = (
+				282A7AF3928B017FEFA58EE7B0BE5F8E /* ChartIQ.h */,
+				6AC1E1984D6EF9BB05767FBE7D4417B1 /* ChartIQData.swift */,
+				953AF0774813B9BDE32081834A8722F6 /* ChartIQQuoteFeedParams.swift */,
+				9CDF6AF3D4B79D0DBDD276A4D58C14DC /* ChartIQView.swift */,
+				E2689A817D88D14304B448798DBFEB17 /* ChartUtils.swift */,
+				28FE1C4369A8373DC1A7AC9AB05E3258 /* CrosshairHUD.swift */,
+				5785B8A94F7F81D9299B8D7DE92E6665 /* String+Extension.swift */,
+				8DA65EFFA69DE4216051A5DFB731DB94 /* Study.swift */,
+				6688483499E84873681EFA20A18AA4E8 /* Symbol.swift */,
+				C9D4FB0AE167ACD976E2A1DE146344B1 /* UIColor+Extension.swift */,
+				BB034563E006F1509FBE5597DAFE3BBD /* UIDevice+Extension.swift */,
+				28D4838B9EC98DCE3447596E6E6C7275 /* URLSession+Extension.swift */,
+				5DED91D51AA960244BCC5F01ED36A198 /* WKWebView+Extension.swift */,
+				5B54BBFF84A8C3F6CBB74B64605111EB /* Support Files */,
+			);
+			name = ChartIQ;
+			path = ChartIQ;
+			sourceTree = "<group>";
+		};
+		F8E1AFCC0AB63073C074CA9DB4D0FDAF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				55F9410985A96835C858414D533D258B /* Pods-ChartIQDemo */,
+				93E35698D432C7F5C53AC083795B7E3C /* Pods-ChartIQDemoTests */,
+				16B109EF0D307C02BF6306F7C0C04BFA /* Pods-ChartIQDemoUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4F527DBFF22B094DD439BEE11D4A9D51 /* Headers */ = {
+		45341F4072A08398446D9D246190BCBE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D2D3BDEC0FD807D76036A01C66B3FBC /* Pods-ChartIQDemoTests-umbrella.h in Headers */,
+				36C7EBBF52D9EDF4F80ECE97013C5BAE /* Pods-ChartIQDemoUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89689F73165642B1A6D37CB88152683E /* Headers */ = {
+		70EC4A383352673D5F6F29C427EC33A0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B79EEC6D14F79D81B7C96CB003C602D /* Pods-ChartIQDemoUITests-umbrella.h in Headers */,
+				DB26F1DC2481F219164950D08A2E3D03 /* ChartIQ-umbrella.h in Headers */,
+				49EF4398767D158D893FB3A24824B4DA /* ChartIQ.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC2B1353F6FEEAF8C91D5E35CF6EA7A7 /* Headers */ = {
+		9214128F53575BFDA360BE54BEA88913 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23E63EB281C93BBF726588337184C40F /* ChartIQ-umbrella.h in Headers */,
-				824CBE98136A192584E8EDD7EB183C86 /* ChartIQ.h in Headers */,
+				54B2BB57E89CC95BD84003D9C975E14B /* Pods-ChartIQDemoTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC497F176D090D5C0813D3F5C942B7CA /* Headers */ = {
+		E934827D34374EC0B8724A6D669DB3C3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2CAF90540C6A887A0A6C543EB705620 /* Pods-ChartIQDemo-umbrella.h in Headers */,
+				A9001AD94B5E15BE83E1398FA494A728 /* Pods-ChartIQDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5985DD051802F9D312C35C9CFA1B3D14 /* Pods-ChartIQDemo */ = {
+		1EDE2E16EFF23E5FD304FD6483EA9DFA /* ChartIQ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 597B5B934300DE6037B6CD6E15B18B9A /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemo" */;
+			buildConfigurationList = E21091D66655FFF66613A4EDBDAD393C /* Build configuration list for PBXNativeTarget "ChartIQ" */;
 			buildPhases = (
-				CC497F176D090D5C0813D3F5C942B7CA /* Headers */,
-				3701AF403551386E2FC31BFD94F8AA0D /* Sources */,
-				54B2573D53271179DF2E2306A8B69BC9 /* Frameworks */,
-				DF5E79B9F167E964D14657390FF304BD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CB4E0784663AF29BBB98C41A8F516B16 /* PBXTargetDependency */,
-			);
-			name = "Pods-ChartIQDemo";
-			productName = "Pods-ChartIQDemo";
-			productReference = D7B93DA0A7F3C3E7A5B9CFC663CE831F /* Pods_ChartIQDemo.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		713836611B46AD0316C42C9A8E83A7AA /* ChartIQ */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CCF0300DE2A77968213E42F64A13BC86 /* Build configuration list for PBXNativeTarget "ChartIQ" */;
-			buildPhases = (
-				AC2B1353F6FEEAF8C91D5E35CF6EA7A7 /* Headers */,
-				7542FAEDC75C7DB8647F2AC78DBEA94C /* Sources */,
-				57E5DBA76B469FD58AE79CFCBB689778 /* Frameworks */,
-				20BD36CA33149908438BDF543E86B9E3 /* Resources */,
+				70EC4A383352673D5F6F29C427EC33A0 /* Headers */,
+				7159C8986A16881A7413DA3850F8F143 /* Sources */,
+				AE04B25DA358F86AFE5ACFD8A7B019D9 /* Frameworks */,
+				6EC1C8941949B44BD583CE6A7D5093D2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -371,99 +342,118 @@
 			);
 			name = ChartIQ;
 			productName = ChartIQ;
-			productReference = 19089C658CB74CA8912492EBE92658B8 /* ChartIQ.framework */;
+			productReference = 17079E86DAE0A9909AA8196A6208B288 /* ChartIQ.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8612064B4F5C7C3B33CF440CC05ABA8B /* Pods-ChartIQDemoTests */ = {
+		70F94036601C7D2E5C52F9F60DDBBE7C /* Pods-ChartIQDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5E51C5B5CD23AAF5D23F4CD2FD88F6B /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoTests" */;
+			buildConfigurationList = C05E1FB1A20B6C349AE6D378350BD250 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoUITests" */;
 			buildPhases = (
-				4F527DBFF22B094DD439BEE11D4A9D51 /* Headers */,
-				9099C95F21D9BE962FAC8473C043CA37 /* Sources */,
-				F00A90B21D4FFF4AACEB179CDB083185 /* Frameworks */,
-				B26119C0AC8D38BE2C914183BF361150 /* Resources */,
+				45341F4072A08398446D9D246190BCBE /* Headers */,
+				BECF27FC86C7160E06ACCDF4D4BD5DC9 /* Sources */,
+				E26D054B5F1328D340A831FBE5399482 /* Frameworks */,
+				3B994E7731EB9CE429BBCDCE0E13EFE0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AD299603DABCEF6AC6C2F57D6423D614 /* PBXTargetDependency */,
-			);
-			name = "Pods-ChartIQDemoTests";
-			productName = "Pods-ChartIQDemoTests";
-			productReference = EC4ABBDE30D42808ECBE170213FC4389 /* Pods_ChartIQDemoTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CFA70FE0FDB59B93A3082CA6BCB0180F /* Pods-ChartIQDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F906698E0E6907AE18679A4C35504B45 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoUITests" */;
-			buildPhases = (
-				89689F73165642B1A6D37CB88152683E /* Headers */,
-				BE701FEBAD1DEB696835B6FB7CB3F4B1 /* Sources */,
-				A5171B9276C8DBA57AD781C86616AEEE /* Frameworks */,
-				07DDF099EEC417FF3DF3AF2D8B291DE0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0BEA3AA5316283D221741B173D96B9A2 /* PBXTargetDependency */,
+				76EC757FE48E2E2307749D8E9E16E6F3 /* PBXTargetDependency */,
 			);
 			name = "Pods-ChartIQDemoUITests";
 			productName = "Pods-ChartIQDemoUITests";
-			productReference = 7CE027C963A206A3BA121383DE987D78 /* Pods_ChartIQDemoUITests.framework */;
+			productReference = 68721B1F2EA0F091F3CF36ADC1B0E991 /* Pods_ChartIQDemoUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		763B2946A2ED9D52EE4432FBC93344B7 /* Pods-ChartIQDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D25B3B654128C3B83F69965BB5999BC6 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoTests" */;
+			buildPhases = (
+				9214128F53575BFDA360BE54BEA88913 /* Headers */,
+				6745388FD7BF13743D6BBDA8E768F924 /* Sources */,
+				8C574D717B0A8A4FA7F5D72E8F50D7DB /* Frameworks */,
+				EA3AAE977623FC3B7807E4B5943B8411 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D9C4E436D428FBC69EE7A951B4290A2 /* PBXTargetDependency */,
+			);
+			name = "Pods-ChartIQDemoTests";
+			productName = "Pods-ChartIQDemoTests";
+			productReference = 50C310E2C3D39D84B10B3D06E7E8B2DC /* Pods_ChartIQDemoTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9441AD091F1F035891D6C47175CCEC32 /* Pods-ChartIQDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 293B372ECB928AEDD9279612ED60EC20 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemo" */;
+			buildPhases = (
+				E934827D34374EC0B8724A6D669DB3C3 /* Headers */,
+				000BD1FDA5761D8D9C43D5C1CF5900F2 /* Sources */,
+				01EFC8A4A452903E658A8E5F7ABE89CA /* Frameworks */,
+				6F623BAAB1180D431DEA1666AA51D715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				034B96F102B3A39EC4B980FE99F61576 /* PBXTargetDependency */,
+			);
+			name = "Pods-ChartIQDemo";
+			productName = "Pods-ChartIQDemo";
+			productReference = 4874929AC9F94A63D1352A00C4A71997 /* Pods_ChartIQDemo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 763DC811E6BA3D39E350429F888E9723 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = CA2C7656C81703373FFBB87E60EED191 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				713836611B46AD0316C42C9A8E83A7AA /* ChartIQ */,
-				5985DD051802F9D312C35C9CFA1B3D14 /* Pods-ChartIQDemo */,
-				8612064B4F5C7C3B33CF440CC05ABA8B /* Pods-ChartIQDemoTests */,
-				CFA70FE0FDB59B93A3082CA6BCB0180F /* Pods-ChartIQDemoUITests */,
+				1EDE2E16EFF23E5FD304FD6483EA9DFA /* ChartIQ */,
+				9441AD091F1F035891D6C47175CCEC32 /* Pods-ChartIQDemo */,
+				763B2946A2ED9D52EE4432FBC93344B7 /* Pods-ChartIQDemoTests */,
+				70F94036601C7D2E5C52F9F60DDBBE7C /* Pods-ChartIQDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		07DDF099EEC417FF3DF3AF2D8B291DE0 /* Resources */ = {
+		3B994E7731EB9CE429BBCDCE0E13EFE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		20BD36CA33149908438BDF543E86B9E3 /* Resources */ = {
+		6EC1C8941949B44BD583CE6A7D5093D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B26119C0AC8D38BE2C914183BF361150 /* Resources */ = {
+		6F623BAAB1180D431DEA1666AA51D715 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF5E79B9F167E964D14657390FF304BD /* Resources */ = {
+		EA3AAE977623FC3B7807E4B5943B8411 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -473,77 +463,77 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3701AF403551386E2FC31BFD94F8AA0D /* Sources */ = {
+		000BD1FDA5761D8D9C43D5C1CF5900F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41D86D233D020366CEB00D6EDE315D50 /* Pods-ChartIQDemo-dummy.m in Sources */,
+				ED984C67A9C6C86A92AD9932CA400A15 /* Pods-ChartIQDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7542FAEDC75C7DB8647F2AC78DBEA94C /* Sources */ = {
+		6745388FD7BF13743D6BBDA8E768F924 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40F3C2C98205182E11BAFB9F3681BC9F /* ChartIQ-dummy.m in Sources */,
-				E3C540E5B9880F8947AB53D7EB80D429 /* ChartIQData.swift in Sources */,
-				FC018DCF87012FC60D618009D2237A96 /* ChartIQQuoteFeedParams.swift in Sources */,
-				4F53D3DB452444367A3F75EB5B1E7A73 /* ChartIQView.swift in Sources */,
-				B100E14C591639FC8EFACF4511964803 /* ChartUtils.swift in Sources */,
-				C7364C7BE4871E4555DA5CEDE25C5AF8 /* CrosshairHUD.swift in Sources */,
-				39008EBCC55955F1C6BE5AB8A5301F2A /* String+Extension.swift in Sources */,
-				82C7AD33318C4CF8C7BC883660C741F5 /* Study.swift in Sources */,
-				0065DB561A8E3A524DB6A2F4CFCE908D /* Symbol.swift in Sources */,
-				08F2759BDC59C7E97CC85E7039CBDCA8 /* UIColor+Extension.swift in Sources */,
-				7AD545D67B17BD59E579A1A970961337 /* UIDevice+Extension.swift in Sources */,
-				1FB683357035DE354DC61947E56E7D9F /* URLSession+Extension.swift in Sources */,
-				F60E92160FE3A19BDA5ECCF63EB95CF9 /* WKWebView+Extension.swift in Sources */,
+				C93F656213B7F735E21AEF7173105AE8 /* Pods-ChartIQDemoTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9099C95F21D9BE962FAC8473C043CA37 /* Sources */ = {
+		7159C8986A16881A7413DA3850F8F143 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07051C8E1E806AC1BCCEE1F85A7B0F49 /* Pods-ChartIQDemoTests-dummy.m in Sources */,
+				907C72E5C888266C3A3A21E6FE6D8793 /* ChartIQ-dummy.m in Sources */,
+				CAB5998B0EE2DB5E6DDFD6B537B0968D /* ChartIQData.swift in Sources */,
+				FE0F2F846D6AD4E7836AE7E8E14A4E85 /* ChartIQQuoteFeedParams.swift in Sources */,
+				1EF739AF3EDE5EF52BB254773BEDE5C9 /* ChartIQView.swift in Sources */,
+				56968A0C655E51E3BD19F53C18C7B71A /* ChartUtils.swift in Sources */,
+				5098519AB7229648B372EF6A3F05F805 /* CrosshairHUD.swift in Sources */,
+				2668F94229E35F25C369C7E79FCD43C1 /* String+Extension.swift in Sources */,
+				F09CD4EB157CA9AB5636C97E45A83A68 /* Study.swift in Sources */,
+				D9E60FDD39756953AD6BB5F774FD9FEB /* Symbol.swift in Sources */,
+				1870988C23A54ACCFDACA9C9AD506D7B /* UIColor+Extension.swift in Sources */,
+				AA229F6A8FED821D1B4A532C16AC7478 /* UIDevice+Extension.swift in Sources */,
+				8DBECC733909770A02C4049B13CB976A /* URLSession+Extension.swift in Sources */,
+				C6E8ABFCB1C6D30E5274D4E7738C1A94 /* WKWebView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE701FEBAD1DEB696835B6FB7CB3F4B1 /* Sources */ = {
+		BECF27FC86C7160E06ACCDF4D4BD5DC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08946025931A3C9DA68B513D6790005D /* Pods-ChartIQDemoUITests-dummy.m in Sources */,
+				921E0C2EDFC0117729FB1A73446268B8 /* Pods-ChartIQDemoUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0BEA3AA5316283D221741B173D96B9A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-ChartIQDemo";
-			target = 5985DD051802F9D312C35C9CFA1B3D14 /* Pods-ChartIQDemo */;
-			targetProxy = BB2B01116AF63078526DD724E1FA3131 /* PBXContainerItemProxy */;
-		};
-		AD299603DABCEF6AC6C2F57D6423D614 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-ChartIQDemo";
-			target = 5985DD051802F9D312C35C9CFA1B3D14 /* Pods-ChartIQDemo */;
-			targetProxy = 037EA5A060FF58F9C3E39EA408E00B9F /* PBXContainerItemProxy */;
-		};
-		CB4E0784663AF29BBB98C41A8F516B16 /* PBXTargetDependency */ = {
+		034B96F102B3A39EC4B980FE99F61576 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChartIQ;
-			target = 713836611B46AD0316C42C9A8E83A7AA /* ChartIQ */;
-			targetProxy = CBC3BD8F7B33D04A3675E73FF0DAAEEF /* PBXContainerItemProxy */;
+			target = 1EDE2E16EFF23E5FD304FD6483EA9DFA /* ChartIQ */;
+			targetProxy = C95474B03CB79C652A2FDCC816BF748D /* PBXContainerItemProxy */;
+		};
+		6D9C4E436D428FBC69EE7A951B4290A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ChartIQDemo";
+			target = 9441AD091F1F035891D6C47175CCEC32 /* Pods-ChartIQDemo */;
+			targetProxy = 99FF652931DA8FD96B281BC558325D70 /* PBXContainerItemProxy */;
+		};
+		76EC757FE48E2E2307749D8E9E16E6F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ChartIQDemo";
+			target = 9441AD091F1F035891D6C47175CCEC32 /* Pods-ChartIQDemo */;
+			targetProxy = B72A924D722D90B0E39B5B82582D076D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		03AA2FCA5ACC02E286D55AC964AC8EC3 /* Debug */ = {
+		24BEC3A5B44C4F3B0457FD05B85F424B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B454CB5892A49F2A47FA3D913CD8F03 /* Pods-ChartIQDemo.debug.xcconfig */;
+			baseConfigurationReference = C1E12A86EC6D2CC24EEBBF50F6A7CE56 /* Pods-ChartIQDemoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -555,40 +545,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0A097396A0085B5DEB156274382551C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32578DADED1EBD18F19395C8B90FB399 /* Pods-ChartIQDemoUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoUITests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoUITests/Pods-ChartIQDemoUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -602,14 +559,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		23D413A92E2B73A06AC48B08B0BDFDCE /* Debug */ = {
+		39F47D9890C7D59C26B566F4EE8B0E57 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B4234F1806B0F99BE827135E0B36AD1 /* ChartIQ.xcconfig */;
+			baseConfigurationReference = E8A1E85084FE75264516016D06C37209 /* ChartIQ.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -621,7 +579,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/ChartIQ/ChartIQ-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ChartIQ/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/ChartIQ/ChartIQ-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -638,9 +596,41 @@
 			};
 			name = Debug;
 		};
-		42709FAA5814379220520695BABF3833 /* Release */ = {
+		473C1893FB5F805FE00941564C73D660 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96AD52FD85AE1BD8F3521B4C0AD9DEF6 /* Pods-ChartIQDemoUITests.release.xcconfig */;
+			baseConfigurationReference = E8A1E85084FE75264516016D06C37209 /* ChartIQ.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ChartIQ/ChartIQ-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChartIQ/ChartIQ-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ChartIQ/ChartIQ.modulemap";
+				PRODUCT_MODULE_NAME = ChartIQ;
+				PRODUCT_NAME = ChartIQ;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4D8150458E2186FA0ABA7722B66806EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B31EF8244E3CB70D9D1F5B81FADA3965 /* Pods-ChartIQDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -652,7 +642,74 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoUITests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6FEF2B76BBE26AA5F5AA6221EC11857B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CB473947ECE2F8D4B4AFD424171DC37 /* Pods-ChartIQDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7B1CE65F23AE59D6B288FA49A260CB27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7EB9B9824035C5213AA014AE7E6A63E /* Pods-ChartIQDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoUITests/Pods-ChartIQDemoUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -666,47 +723,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		4326F8937528DC757CDD137E825325C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 706F1A1A60127255818529FA44A2732A /* Pods-ChartIQDemo.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5DE19CECB206ACCCACF04D62F93FFDA6 /* Release */ = {
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -738,8 +760,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -763,45 +783,12 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		7A2F3B73753BE638532C00C0FBE8F31D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F39569544366B2FF680622CEA6376D /* Pods-ChartIQDemoTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		858D01EEFE984249A9581D18DBEA53F1 /* Debug */ = {
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -833,8 +820,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -862,46 +847,14 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		AA5A6431A62B60EF334DC3F2C94111CD /* Release */ = {
+		B5EAC1994C7D8C6FBAE1A4B98CA16995 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B4234F1806B0F99BE827135E0B36AD1 /* ChartIQ.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ChartIQ/ChartIQ-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ChartIQ/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ChartIQ/ChartIQ.modulemap";
-				PRODUCT_MODULE_NAME = ChartIQ;
-				PRODUCT_NAME = ChartIQ;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B7DD440AB170A127CF7A08EE44F88A6F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F25E2105B8BE42415049BA5635176B36 /* Pods-ChartIQDemoTests.release.xcconfig */;
+			baseConfigurationReference = AFD3C16B1D310884A08C52DE1D497CDC /* Pods-ChartIQDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -913,12 +866,45 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemoTests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemoTests/Pods-ChartIQDemoTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ECFEFFA49005F9B9701CC3F3A77D981C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA4FB8CA86AE27848BB3D1AD402518FF /* Pods-ChartIQDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ChartIQDemo/Pods-ChartIQDemo.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -936,52 +922,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		293B372ECB928AEDD9279612ED60EC20 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				858D01EEFE984249A9581D18DBEA53F1 /* Debug */,
-				5DE19CECB206ACCCACF04D62F93FFDA6 /* Release */,
+				B5EAC1994C7D8C6FBAE1A4B98CA16995 /* Debug */,
+				ECFEFFA49005F9B9701CC3F3A77D981C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		597B5B934300DE6037B6CD6E15B18B9A /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemo" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03AA2FCA5ACC02E286D55AC964AC8EC3 /* Debug */,
-				4326F8937528DC757CDD137E825325C3 /* Release */,
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CCF0300DE2A77968213E42F64A13BC86 /* Build configuration list for PBXNativeTarget "ChartIQ" */ = {
+		C05E1FB1A20B6C349AE6D378350BD250 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				23D413A92E2B73A06AC48B08B0BDFDCE /* Debug */,
-				AA5A6431A62B60EF334DC3F2C94111CD /* Release */,
+				7B1CE65F23AE59D6B288FA49A260CB27 /* Debug */,
+				24BEC3A5B44C4F3B0457FD05B85F424B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5E51C5B5CD23AAF5D23F4CD2FD88F6B /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoTests" */ = {
+		D25B3B654128C3B83F69965BB5999BC6 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7A2F3B73753BE638532C00C0FBE8F31D /* Debug */,
-				B7DD440AB170A127CF7A08EE44F88A6F /* Release */,
+				4D8150458E2186FA0ABA7722B66806EA /* Debug */,
+				6FEF2B76BBE26AA5F5AA6221EC11857B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F906698E0E6907AE18679A4C35504B45 /* Build configuration list for PBXNativeTarget "Pods-ChartIQDemoUITests" */ = {
+		E21091D66655FFF66613A4EDBDAD393C /* Build configuration list for PBXNativeTarget "ChartIQ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A097396A0085B5DEB156274382551C2 /* Debug */,
-				42709FAA5814379220520695BABF3833 /* Release */,
+				39F47D9890C7D59C26B566F4EE8B0E57 /* Debug */,
+				473C1893FB5F805FE00941564C73D660 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
