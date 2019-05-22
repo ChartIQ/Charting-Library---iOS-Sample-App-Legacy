@@ -5,7 +5,7 @@ Both the SDK and this application are intended to provide guidance on how to imp
 
 ## About the iOS Charting SDK
 
-The iOS Charting SDK has been designed to support this basic application and may need to be extended to support more elaborate implementations.
+The [iOS Charting SDK](https://github.com/ChartIQ/Charting-Library---iOS-SDK) has been designed to support this basic application and may need to be extended to support more elaborate implementations.
 This can be done by adding additional code to invoke Javascript functions directly. 
 Feel free to contact us and request sample code and guidance on how to extend the SDK.
 
