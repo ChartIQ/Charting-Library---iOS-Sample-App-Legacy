@@ -1,7 +1,7 @@
 # Charting-Library---iOS-Sample-App
 
 This is a basic iOS application built with ChartIQ's iOS Charting SDK. 
-Both the SDK and this application are intended to provide guidance on how to implement a native menu that interacts with the most common API calls in the [javaScript library](https://documentation.chartiq.com).
+Both the native SDK and this application are intended to provide guidance on how to implement a native iOS app that interacts with the most common API calls in the [javaScript library](https://documentation.chartiq.com).
 
 ## About the iOS Charting SDK
 
