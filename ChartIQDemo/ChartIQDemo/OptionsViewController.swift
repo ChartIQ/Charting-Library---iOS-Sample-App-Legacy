@@ -13,12 +13,12 @@ class OptionsViewController: UITableViewController {
     // MARK: - Properties
     
     @IBOutlet weak var backButton: UIButton!
-    var options = [String]()
-    var selectedOption = ""
-    var isRightButtonHidden = true
-    var rightButtonTitle = ""
-    var optionsDidChangeBlock: ((String) -> Void)?
-    var rightButtonDidClickBlock: ((String) -> Void)?
+    @objc var options = [String]()
+    @objc var selectedOption = ""
+    @objc var isRightButtonHidden = true
+    @objc var rightButtonTitle = ""
+    @objc var optionsDidChangeBlock: ((String) -> Void)?
+    @objc var rightButtonDidClickBlock: ((String) -> Void)?
     
     // MARK: - View Life Cycle
 
@@ -37,7 +37,7 @@ class OptionsViewController: UITableViewController {
 
     // MARK: - Layout
     
-    func setupNavigationBar() {
+    @objc func setupNavigationBar() {
         let button = UIButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 120, height: 26)
         button.backgroundColor = UIColor(hex: 0xde6661)
@@ -47,7 +47,7 @@ class OptionsViewController: UITableViewController {
         button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 12)
         button.addTarget(self, action: #selector(OptionsViewController.rightBarButtonDidClick), for: .touchUpInside)
         let barButton = UIBarButtonItem(customView: button)
-        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
+        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
         negativeSpacer.width = -5
         navigationItem.rightBarButtonItems = [negativeSpacer, barButton]
     }

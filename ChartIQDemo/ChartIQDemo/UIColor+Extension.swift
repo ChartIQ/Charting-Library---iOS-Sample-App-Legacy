@@ -10,30 +10,30 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    convenience init(hex: Int) {
+    @objc convenience init(hex: Int) {
         self.init(hex: hex, a: 1.0)
     }
     
-    convenience init(hex: Int, a: CGFloat) {
+    @objc convenience init(hex: Int, a: CGFloat) {
         self.init(r: (hex >> 16) & 0xff, g: (hex >> 8) & 0xff, b: hex & 0xff, a: a)
     }
     
-    convenience init(r: Int, g: Int, b: Int) {
+    @objc convenience init(r: Int, g: Int, b: Int) {
         self.init(r: r, g: g, b: b, a: 1.0)
     }
     
-    convenience init(r: Int, g: Int, b: Int, a: CGFloat) {
+    @objc convenience init(r: Int, g: Int, b: Int, a: CGFloat) {
         self.init(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: a)
     }
     
-    convenience init?(hexString: String) {
+    @objc convenience init?(hexString: String) {
         guard let hex = hexString.hex else {
             return nil
         }
         self.init(hex: hex)
     }
     
-    func toHexString() -> String {
+    @objc func toHexString() -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
@@ -47,7 +47,7 @@ extension UIColor {
         return String(format: "#%06x", rgb)
     }
     
-    static func colorsForFillColorPicker() -> [UIColor] {
+    @objc static func colorsForFillColorPicker() -> [UIColor] {
         return [UIColor(hex: 0x960616), UIColor(hex: 0xea1d2c), UIColor(hex: 0xef6c53), UIColor(hex: 0xe4977c), UIColor.white,
          UIColor(hex: 0xa16118), UIColor(hex: 0xf4932f), UIColor(hex: 0xf8ae63), UIColor(hex: 0xfbc58d), UIColor(hex: 0xcccccc),
          UIColor(hex: 0xcbb920), UIColor(hex: 0xfff126), UIColor(hex: 0xfff371), UIColor(hex: 0xfff69e), UIColor(hex: 0xb7b7b7),
@@ -59,7 +59,7 @@ extension UIColor {
          UIColor(hex: 0x7DA6F5)]
     }
     
-    static func colorsForColorPicker() -> [UIColor] {
+    @objc static func colorsForColorPicker() -> [UIColor] {
         return [UIColor(hex: 0x960616), UIColor(hex: 0xea1d2c), UIColor(hex: 0xef6c53), UIColor(hex: 0xe4977c), UIColor.white,
                 UIColor(hex: 0xa16118), UIColor(hex: 0xf4932f), UIColor(hex: 0xf8ae63), UIColor(hex: 0xfbc58d), UIColor(hex: 0xcccccc),
                 UIColor(hex: 0xcbb920), UIColor(hex: 0xfff126), UIColor(hex: 0xfff371), UIColor(hex: 0xfff69e), UIColor(hex: 0xb7b7b7),

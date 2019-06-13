@@ -13,24 +13,24 @@ class SearchStudiesViewController: UITableViewController {
     
     // MARK: - Properties
     @IBOutlet weak var searchTextField: UITextField!
-    var editButton: UIButton!
-    var negativeSpacer: UIBarButtonItem!
-    var editBarButton: UIBarButtonItem!
-    var allStudies = [Study]()
-    var addedStudies = [Study]()
-    var selectedStudies = [Study]()
-    var selectedAddedStudies = [Study]()
-    var filteredStudies = [Study]()
-    var isFiltering: Bool {
+    @objc var editButton: UIButton!
+    @objc var negativeSpacer: UIBarButtonItem!
+    @objc var editBarButton: UIBarButtonItem!
+    @objc var allStudies = [Study]()
+    @objc var addedStudies = [Study]()
+    @objc var selectedStudies = [Study]()
+    @objc var selectedAddedStudies = [Study]()
+    @objc var filteredStudies = [Study]()
+    @objc var isFiltering: Bool {
         return searchTextField.isUserInteractionEnabled && !(searchTextField.text ?? "").isEmpty
     }
     
-    var studiesDidChangeBlock: (([String]) -> Void)?
-    var addStudiesBlock: (([Study]) -> Void)?
-    var removeStudiesBlock: (([Study]) -> Void)?
-    var getAddedStudiesBlock: (() -> [Study])?
+    @objc var studiesDidChangeBlock: (([String]) -> Void)?
+    @objc var addStudiesBlock: (([Study]) -> Void)?
+    @objc var removeStudiesBlock: (([Study]) -> Void)?
+    @objc var getAddedStudiesBlock: (() -> [Study])?
     var getStudyParameterBlock: ((String) -> (input: Any?, output: Any?, parameters: Any?))?
-    var editStudiesBlock: ((Study) -> Void)?
+    @objc var editStudiesBlock: ((Study) -> Void)?
     
     enum Studies: Int {
         case active
@@ -56,7 +56,7 @@ class SearchStudiesViewController: UITableViewController {
         super.viewDidLoad()
         
         searchTextField.attributedPlaceholder =
-            NSAttributedString(string: "Search for studies", attributes: [NSForegroundColorAttributeName : UIColor.white])
+            NSAttributedString(string: "Search for studies", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : UIColor.white]))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,7 +106,7 @@ class SearchStudiesViewController: UITableViewController {
     
     // MARK: - layout
     
-    func updateNavigationBar() {
+    @objc func updateNavigationBar() {
         if editBarButton == nil {
             editButton = UIButton(type: .custom)
             editButton.frame = CGRect(x: 0, y: 0, width: 91, height: 26)
@@ -115,7 +115,7 @@ class SearchStudiesViewController: UITableViewController {
             editButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 12)
             editButton.addTarget(self, action: #selector(SearchStudiesViewController.editButtonDidClick), for: .touchUpInside)
             editBarButton = UIBarButtonItem(customView: editButton)
-            negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
+            negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
             negativeSpacer.width = -5
         }
         if !selectedStudies.isEmpty || !selectedAddedStudies.isEmpty{
@@ -141,7 +141,7 @@ class SearchStudiesViewController: UITableViewController {
     
     // MARK: - Helper
     
-    func filterStudies(by keyword: String) {
+    @objc func filterStudies(by keyword: String) {
         filteredStudies = allStudies.filter({(study) -> Bool in
             return study.name.lowercased().range(of: keyword.lowercased()) != nil
         })
@@ -271,4 +271,15 @@ extension SearchStudiesViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

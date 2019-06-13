@@ -15,8 +15,8 @@ class ColorPickerView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var collectionViewTop: NSLayoutConstraint!
-    var colors = UIColor.colorsForColorPicker()
-    var colorDidChangeBlock: ((UIColor) -> Void)?
+    @objc var colors = UIColor.colorsForColorPicker()
+    @objc var colorDidChangeBlock: ((UIColor) -> Void)?
     var direction = Direction.top {
         didSet {
             collectionViewTop.constant = direction.top
