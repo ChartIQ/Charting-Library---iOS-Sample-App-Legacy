@@ -27,7 +27,7 @@ extension WKWebView {
         }
         
         while !finished {
-            RunLoop.current.run(mode: .defaultRunLoopMode, before: Date.distantFuture)
+            RunLoop.current.run(mode: RunLoop.Mode.default, before: Date.distantFuture)
         }
         
         return jsValue

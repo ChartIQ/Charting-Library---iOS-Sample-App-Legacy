@@ -238,7 +238,7 @@ class SearchStudiesViewController: UITableViewController {
         switch Studies(rawValue: indexPath.section)! {
         case .active:
             selectedStudies.removeAll()
-            if let index = selectedAddedStudies.index(of: addedStudies[indexPath.row]) {
+            if let index = selectedAddedStudies.firstIndex(of: addedStudies[indexPath.row]) {
                 selectedAddedStudies.remove(at: index)
             } else {
                 selectedAddedStudies.append(addedStudies[indexPath.row])
@@ -249,7 +249,7 @@ class SearchStudiesViewController: UITableViewController {
             if isFiltering {
                 studies = filteredStudies
             }
-            if let index = selectedStudies.index(of: studies[indexPath.row]) {
+            if let index = selectedStudies.firstIndex(of: studies[indexPath.row]) {
                 selectedStudies.remove(at: index)
             } else {
                 selectedStudies.append(studies[indexPath.row])
