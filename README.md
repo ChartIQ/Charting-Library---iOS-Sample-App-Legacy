@@ -13,10 +13,6 @@ Feel free to contact us and request sample code and guidance on how to extend th
 
 - A valid version of ChartIQ's charting library (version 7.0.3 or greater). Please contact sales@chartiq.com if you do not already have a license or evaluation version.
 
-- This sample iOS application is written using Swift 3.
-  - To run it, you will need to use Xcode version 10.0 or prior.
-  - The following link can be used to the download it: https://developer.apple.com/download/more (Search for Xcode 10.0)
-
 ## Getting started
 
 Instructions for compiling the application and for using the native SDK can be found at:
