@@ -13,7 +13,7 @@ import ChartIQ
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    @objc let url = "http://yourdeployment/sample-template-native-sdk.html"
+    @objc let url = "http://your.deployment.example/sample-template-native-sdk.html"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
