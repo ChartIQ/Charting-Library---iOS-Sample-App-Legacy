@@ -31,7 +31,7 @@ class SettingViewController: UITableViewController {
     fileprivate var selectedChartType: Style?
     fileprivate var selectedAggregationType: AggregationType?
     fileprivate var selectedScale = ChartIQScale.log
-    fileprivate var newUrl: String = UserDefaults.standard.value(forKey: "ChartIQURL") as! String!
+    fileprivate var newUrl: String = UserDefaults.standard.value(forKey: "ChartIQURL") as! String
     @objc var styleDidChangeBlock: ((ChartIQChartType) -> Void)?
     @objc var aggregationTypeDidChangeBlock: ((ChartIQAggregationType) -> Void)?
     @objc var scaleDidChangeBlock: ((ChartIQScale) -> Void)?
@@ -231,7 +231,7 @@ class SettingViewController: UITableViewController {
             styleDidChangeBlock?(selectedChartType!.chartType)
         }
         scaleDidChangeBlock?(selectedScale)
-        if newUrl != UserDefaults.standard.value(forKey: "ChartIQURL") as! String! {
+        if newUrl != UserDefaults.standard.value(forKey: "ChartIQURL") as? String {
             UserDefaults.standard.set(newUrl, forKey: "ChartIQURL")
             urlDidChangeBlock?(newUrl)
         }
@@ -289,7 +289,7 @@ class SettingViewController: UITableViewController {
                 strongSelf.selectedScale = switchControl.isOn ? .log : .linear
             }
         case .url:
-            cell.textFields?[0].text = UserDefaults.standard.value(forKey: "ChartIQURL") as! String!
+            cell.textFields?[0].text = UserDefaults.standard.value(forKey: "ChartIQURL") as? String
             cell.textFieldValueDidEndEditingBlock = { [weak self] (cell, textField) in
                 guard let strongSelf = self else { return }
                 if let text = textField.text {
