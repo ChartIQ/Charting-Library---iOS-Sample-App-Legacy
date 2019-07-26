@@ -20,9 +20,9 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var layoutConstraints: [NSLayoutConstraint]?
     @IBOutlet var stackViews: [UIStackView]?
     @IBOutlet var switchs: [UISwitch]?
-    var buttonDidClickBlock: ((TableViewCell, UIButton) -> Void)?
-    var switchValueDidChangeBlock: ((TableViewCell, UISwitch) -> Void)?
-    var textFieldValueDidEndEditingBlock: ((TableViewCell, UITextField) -> Void)?
+    @objc var buttonDidClickBlock: ((TableViewCell, UIButton) -> Void)?
+    @objc var switchValueDidChangeBlock: ((TableViewCell, UISwitch) -> Void)?
+    @objc var textFieldValueDidEndEditingBlock: ((TableViewCell, UITextField) -> Void)?
     
     // MARK: - View Life Cycle
     

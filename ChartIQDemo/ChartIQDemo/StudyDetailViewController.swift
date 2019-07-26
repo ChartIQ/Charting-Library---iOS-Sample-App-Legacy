@@ -37,15 +37,15 @@ class StudyDetailViewController: UITableViewController {
         }
     }
     
-    var colorPicker: ColorPickerView!
-    var selectedColorIndex = -1
-    var study: Study!
-    var inputParameter: [[String: Any]]!
-    var outputParameter: [[String: Any]]!
-    var paramParameter: [[String: Any]]!
-    var removeStudyBlock: ((Study) -> Void)?
-    var editStudyBlock: ((Study) -> Void)?
-    var selectedCellIndex = -1;
+    @objc var colorPicker: ColorPickerView!
+    @objc var selectedColorIndex = -1
+    @objc var study: Study!
+    @objc var inputParameter: [[String: Any]]!
+    @objc var outputParameter: [[String: Any]]!
+    @objc var paramParameter: [[String: Any]]!
+    @objc var removeStudyBlock: ((Study) -> Void)?
+    @objc var editStudyBlock: ((Study) -> Void)?
+    @objc var selectedCellIndex = -1;
     
     // MARK: - View Life Cycle
     
@@ -54,7 +54,7 @@ class StudyDetailViewController: UITableViewController {
 
         setupNavigationBar()
         setupColorPicker()
-        NotificationCenter.default.addObserver(self, selector: #selector(StudyDetailViewController.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StudyDetailViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,7 +109,7 @@ class StudyDetailViewController: UITableViewController {
 
     // MARK: - Layout
     
-    func setupNavigationBar() {
+    @objc func setupNavigationBar() {
         let editButton = UIButton(type: .custom)
         editButton.frame = CGRect(x: 0, y: 0, width: 107, height: 26)
         editButton.backgroundColor = UIColor(hex: 0xde6661)
@@ -119,12 +119,12 @@ class StudyDetailViewController: UITableViewController {
         editButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 12)
         editButton.addTarget(self, action: #selector(StudyDetailViewController.editButtonDidClick), for: .touchUpInside)
         let editBarButton = UIBarButtonItem(customView: editButton)
-        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
+        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
         negativeSpacer.width = -5
         navigationItem.rightBarButtonItems = [negativeSpacer, editBarButton]
     }
     
-    func setupColorPicker() {
+    @objc func setupColorPicker() {
         colorPicker = Bundle.main.loadNibNamed("ColorPickerView", owner: self, options: nil)![0] as? ColorPickerView
         tableView.addSubview(colorPicker)
         colorPicker.colorDidChangeBlock = { [weak self] (color) in
@@ -147,11 +147,11 @@ class StudyDetailViewController: UITableViewController {
     
     // MARK: - Helper
     
-    func keyboardWillShow() {
+    @objc func keyboardWillShow() {
         colorPicker.isHidden = true
     }
 
-    func updateStudyParameters() {
+    @objc func updateStudyParameters() {
         var inputs = [String: Any]()
         for input in inputParameter {
             inputs[input["name"] as! String] = input["value"]!
@@ -169,7 +169,7 @@ class StudyDetailViewController: UITableViewController {
         study.parameters = parameters
     }
     
-    func resetStudyParameters() {
+    @objc func resetStudyParameters() {
         for (index, var inputs) in inputParameter.enumerated() {
             inputs["value"] = inputs["defaultInput"]
             inputParameter![index] = inputs

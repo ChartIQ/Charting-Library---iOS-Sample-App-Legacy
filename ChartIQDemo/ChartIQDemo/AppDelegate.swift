@@ -13,9 +13,9 @@ import ChartIQ
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let url = "http://192.168.2.42:8080/branch/default/sample-template-native-sdk.html"
+    @objc let url = "http://your.deployment.example/sample-template-native-sdk.html"
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         try! ChartIQView.start(url: url)
         return true

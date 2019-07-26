@@ -38,15 +38,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var lineTableView: UITableView!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
-    let defaultSymbol = "AAPL"
-    let defaultPeriod = 1
-    let defaultInterval = "day"
-    let refreshInterval = 1
-    var colors = UIColor.colorsForColorPicker()
-    var fillColors = UIColor.colorsForFillColorPicker()
-    var periodButton: UIButton!
-    var selectedIntervalIndexPath = IndexPath(row: 0, section: 2)
-    var selectedDrawTool: String?
+    @objc let defaultSymbol = "AAPL"
+    @objc let defaultPeriod = 1
+    @objc let defaultInterval = "day"
+    @objc let refreshInterval = 1
+    @objc var colors = UIColor.colorsForColorPicker()
+    @objc var fillColors = UIColor.colorsForFillColorPicker()
+    @objc var periodButton: UIButton!
+    @objc var selectedIntervalIndexPath = IndexPath(row: 0, section: 2)
+    @objc var selectedDrawTool: String?
     
     enum SegueIdentifier: String {
         case searchStudiesSegue = "SearchStudiesSegue"
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
 
     // MARK: - Layout
     
-    func setupNavigationBar() {
+    @objc func setupNavigationBar() {
         periodButton = UIButton(type: .custom)
         periodButton.frame = CGRect(x: 0, y: 0, width: 50, height: 25)
         periodButton.backgroundColor = UIColor.clear
@@ -112,18 +112,18 @@ class ViewController: UIViewController {
         crosshairBarButton.tintColor = UIColor.white
         navigationItem.rightBarButtonItems = [crosshairBarButton, periodBarButton]
         let logoImageview = UIImageView(image: #imageLiteral(resourceName: "Logo"))
-        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
+        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
         negativeSpacer.width = -6
         
         navigationItem.leftBarButtonItems = [negativeSpacer, UIBarButtonItem(customView: logoImageview)]
     }
     
-    func setupChartIQView() {
+    @objc func setupChartIQView() {
         chartIQView.dataSource = self
         chartIQView.delegate = self
     }
     
-    func setupPeriodMenuView() {
+    @objc func setupPeriodMenuView() {
         navigationController!.view.addSubview(periodMenuView)
         periodMenuView.translatesAutoresizingMaskIntoConstraints = false
         periodMenuView.leadingAnchor.constraint(
@@ -137,14 +137,14 @@ class ViewController: UIViewController {
         periodTableView.reloadData()
     }
     
-    func updateCrosshairHUDView(with hud: CrosshairHUD) {
+    @objc func updateCrosshairHUDView(with hud: CrosshairHUD) {
         crosshairHUDLowLabel.text = hud.low
         crosshairHUDHighLabel.text = hud.high
         crosshairHUDCloseLabel.text = hud.close
         crosshairHUDVolumeLabel.text = hud.volume
     }
     
-    func showCrosshairsHUD() {
+    @objc func showCrosshairsHUD() {
         if chartIQView.isCrosshairsEnabled() {
             if let hud = chartIQView.getCrosshairsHUDDetail() {
                 updateCrosshairHUDView(with: hud)
@@ -155,7 +155,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func showDrawToolView() {
+    @objc func showDrawToolView() {
         drawToolButton.setTitle(selectedDrawTool, for: .normal)
         drawToolViewHeight.constant = 60
         drawToolView.isHidden = false
@@ -186,14 +186,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func hideDrawToolView() {
+    @objc func hideDrawToolView() {
         drawToolViewHeight.constant = 0
         drawToolView.isHidden = true
     }
     
     // MARK: - Helper
     
-    func pushCurrentUpdate() {
+    @objc func pushCurrentUpdate() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'10:00:00.000'Z'"
         let date = dateFormatter.string(from: Date())
@@ -215,7 +215,7 @@ class ViewController: UIViewController {
         })
     }
     
-    func setupSettingsController(_ viewController: SettingViewController) {
+    @objc func setupSettingsController(_ viewController: SettingViewController) {
         viewController.currentScale = chartIQView.scale
         viewController.currentChartType = chartIQView.chartType
         viewController.currentAggregationType = chartIQView.aggregationType
@@ -245,7 +245,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func setupDrawingController(_ viewController: OptionsViewController) {
+    @objc func setupDrawingController(_ viewController: OptionsViewController) {
         viewController.title = "Select a drawing tool"
         viewController.rightButtonTitle = "Clear All Drawings"
         viewController.isRightButtonHidden = false
@@ -294,7 +294,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func setupSearchStudiesController(_ viewController: SearchStudiesViewController) {
+    @objc func setupSearchStudiesController(_ viewController: SearchStudiesViewController) {
         viewController.allStudies = chartIQView.getStudyList()
         
         // Adds studies
@@ -341,13 +341,13 @@ class ViewController: UIViewController {
         }
         
         // Gets added studies
-        viewController.getAddedStudiesBlock = {[weak self] (study) -> [Study] in
+        viewController.getAddedStudiesBlock = {[weak self] () -> [Study] in
             guard let strongSelf = self else { return [Study]() }
             return strongSelf.chartIQView.getAddedStudyList()
         }
     }
 
-    func loadChartInitialData(symbol: String, period: Int, interval: String, completionHandler: @escaping ([ChartIQData]) -> Void) {
+    @objc func loadChartInitialData(symbol: String, period: Int, interval: String, completionHandler: @escaping ([ChartIQData]) -> Void) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"
         let endDate = dateFormatter.string(from: Date())
@@ -361,7 +361,7 @@ class ViewController: UIViewController {
         })
     }
     
-    func getDrawingToolDisplayName(for tool: ChartIQDrawingTool) -> String {
+    @objc func getDrawingToolDisplayName(for tool: ChartIQDrawingTool) -> String {
         switch tool {
         case .channel: return "Channel"
         case .continuousLine: return "Continuous Line"
@@ -382,19 +382,19 @@ class ViewController: UIViewController {
         }
     }
     
-    func showPeriodMenu() {
+    @objc func showPeriodMenu() {
         UIView.animate(withDuration: 0.3) { self.periodMenuView.alpha = 1 }
     }
     
-    func hidePeriodMenu() {
+    @objc func hidePeriodMenu() {
         UIView.animate(withDuration: 0.3) { self.periodMenuView.alpha = 0 }
     }
     
     // MARK: - Data
     
-    let uuid = UUID().uuidString;
+    @objc let uuid = UUID().uuidString;
     
-    func loadChartData(by params: ChartIQQuoteFeedParams, completionHandler: @escaping ([ChartIQData]) -> Void) {
+    @objc func loadChartData(by params: ChartIQQuoteFeedParams, completionHandler: @escaping ([ChartIQData]) -> Void) {
         let urlString =
             "http://simulator.chartiq.com/datafeed?identifier=\(params.symbol)" +
                 "&startdate=\(params.startDate)" +
