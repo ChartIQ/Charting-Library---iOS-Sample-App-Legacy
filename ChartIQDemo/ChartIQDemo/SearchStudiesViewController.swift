@@ -55,8 +55,7 @@ class SearchStudiesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchTextField.attributedPlaceholder =
-            NSAttributedString(string: "Search for studies", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : UIColor.white]))
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "Search for studies", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white] as [NSAttributedString.Key: Any])
     }
     
     override func viewWillAppear(_ animated: Bool) {
