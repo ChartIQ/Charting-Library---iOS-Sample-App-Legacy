@@ -499,16 +499,6 @@ public class ChartIQView: UIView {
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
-    /// Renders a chart for a particular instrument from the data passed in or fetches new data from the attached CIQ.QuoteFeed. This is the method that should be called every time a new chart needs to be drawn for a different instrument.
-    ///
-    /// - Parameters:
-    ///   - object: The symbol object for the new chart
-    public func setSymbolObject(_ object: Symbol) {
-        let script =
-            "stxx.newChart(\"\(symbol)\", \(dataMethod == .pull ? "null" : "[]"), null, \(dataMethod == .pull ? "function() { webkit.messageHandlers.newSymbolCallbackHandler.postMessage(\"\(symbol)\"); } " : "null"),  {periodicity:{period:\(periodicity),interval:\(jsInterval)}}); "
-        webView.evaluateJavaScript(script, completionHandler: nil)
-    }
-    
     /// Adds a symbol comparison to the chart.
     ///
     /// - Parameters:
