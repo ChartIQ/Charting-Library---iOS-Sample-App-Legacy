@@ -2,8 +2,8 @@
 //  Symbol.swift
 //  ChartIQ
 //
-//  Created by Tao Man Kit on 31/1/2017.
-//  Copyright © 2017 ROKO. All rights reserved.
+//  Copyright 2012-2019 by ChartIQ, Inc.
+//  All rights reserved
 //
 
 import UIKit
