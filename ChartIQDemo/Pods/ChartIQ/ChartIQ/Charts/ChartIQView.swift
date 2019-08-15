@@ -2,8 +2,8 @@
 //  ChartIQView.swift
 //  ChartIQ
 //
-//  Created by Tao Man Kit on 9/1/2017.
-//  Copyright © 2017 ROKO. All rights reserved.
+//  Copyright 2012-2019 by ChartIQ, Inc.
+//  All rights reserved
 //
 
 import UIKit
@@ -332,7 +332,7 @@ public class ChartIQView: UIView {
         webView.configuration.userContentController.removeScriptMessageHandler(forName: ChartIQCallbackMessage.drawing.rawValue)
     }
     
-    /// Sets your ROKO Mobi api id and url here.
+    /// Sets your webview url here.
     ///
     /// - Parameters:
     ///   - url: The starting url
@@ -496,16 +496,6 @@ public class ChartIQView: UIView {
         }
         
         let script = "callNewChart(\"\(symbol)\");"
-        webView.evaluateJavaScript(script, completionHandler: nil)
-    }
-    
-    /// Renders a chart for a particular instrument from the data passed in or fetches new data from the attached CIQ.QuoteFeed. This is the method that should be called every time a new chart needs to be drawn for a different instrument.
-    ///
-    /// - Parameters:
-    ///   - object: The symbol object for the new chart
-    public func setSymbolObject(_ object: Symbol) {
-        let script =
-            "stxx.newChart(\"\(symbol)\", \(dataMethod == .pull ? "null" : "[]"), null, \(dataMethod == .pull ? "function() { webkit.messageHandlers.newSymbolCallbackHandler.postMessage(\"\(symbol)\"); } " : "null"),  {periodicity:{period:\(periodicity),interval:\(jsInterval)}}); "
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
