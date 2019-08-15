@@ -332,7 +332,7 @@ public class ChartIQView: UIView {
         webView.configuration.userContentController.removeScriptMessageHandler(forName: ChartIQCallbackMessage.drawing.rawValue)
     }
     
-    /// Sets your ROKO Mobi api id and url here.
+    /// Sets your webview url here.
     ///
     /// - Parameters:
     ///   - url: The starting url
