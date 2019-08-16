@@ -91,12 +91,6 @@ class ViewController: UIViewController {
         }
     }
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: nil, completion: { context in
-            self.chartIQView.resizeChart()
-        })
-    }
-
     // MARK: - Layout
     
     @objc func setupNavigationBar() {
