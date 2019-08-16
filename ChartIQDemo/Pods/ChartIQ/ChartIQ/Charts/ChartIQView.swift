@@ -644,7 +644,6 @@ public class ChartIQView: UIView {
     /// Sets the chart data by push.
     ///
     /// - Parameters:
-    ///   - symbol: The symbol for the new chart
     ///   - data: An array of properly formatted OHLC quote objects to create a chart
     public func push(_ data: [ChartIQData]) {
         let obj = data.map{ $0.toDictionary() }
@@ -958,7 +957,7 @@ public class ChartIQView: UIView {
         let jsonData = try! JSONSerialization.data(withJSONObject: args, options: .prettyPrinted)
         let json = String(data: jsonData, encoding: .utf8)?.replacingOccurrences(of: "\n", with: "") ?? ""
         
-        let script = "stxx.\(functionName)(\(json));"
+        let script = "stxx.\(functionName)(\(json.dropFirst().dropLast()));"
         let value = webView.evaluateJavaScriptWithReturn(script)
         var result = ""
 

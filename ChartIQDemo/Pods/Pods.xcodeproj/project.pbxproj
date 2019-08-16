@@ -76,17 +76,17 @@
 		55C934616E1C02DE5F3AABE98C47C644 /* Pods-ChartIQDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ChartIQDemo.modulemap"; sourceTree = "<group>"; };
 		593B34805D85E910C850154D33F684D6 /* ChartIQ.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartIQ.xcconfig; sourceTree = "<group>"; };
 		61631F72E340547D7E75585BE36657EC /* Pods-ChartIQDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ChartIQDemo-umbrella.h"; sourceTree = "<group>"; };
-		628D6090C31C3C0E02C9B613E06C31F1 /* Pods_ChartIQDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChartIQDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6860EE747370FFAD181CB6BE50B89CFD /* Pods_ChartIQDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChartIQDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		628D6090C31C3C0E02C9B613E06C31F1 /* Pods_ChartIQDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemoTests.framework; path = "Pods-ChartIQDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6860EE747370FFAD181CB6BE50B89CFD /* Pods_ChartIQDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemoUITests.framework; path = "Pods-ChartIQDemoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4528E24056222D2F6343DE40B749F8 /* CrosshairHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrosshairHUD.swift; path = ChartIQ/Charts/Model/CrosshairHUD.swift; sourceTree = "<group>"; };
 		6F597D81DB85B8AC86C8B7440EC8363F /* Pods-ChartIQDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemoUITests-dummy.m"; sourceTree = "<group>"; };
 		7A4E6C9AE1F4FFDF49522B99158206CE /* UIColor+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "ChartIQ/Extension/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		85ADC57ACC2E0DD42D36C9ADE6DA3C22 /* ChartIQ-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartIQ-dummy.m"; sourceTree = "<group>"; };
 		8BFD4D8E818D1576525FEDF005C821AA /* Pods-ChartIQDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemo-Info.plist"; sourceTree = "<group>"; };
-		9626412DDEE78570320DCDFE67416E51 /* Pods_ChartIQDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChartIQDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9626412DDEE78570320DCDFE67416E51 /* Pods_ChartIQDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ChartIQDemo.framework; path = "Pods-ChartIQDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		990D80456408E03DAD41ADCE1B95D87E /* ChartUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartUtils.swift; path = ChartIQ/Charts/Utils/ChartUtils.swift; sourceTree = "<group>"; };
 		9C6CC4CA3327247392DCC862BE6A1355 /* ChartIQData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartIQData.swift; path = ChartIQ/Charts/Model/ChartIQData.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0F121969B8542BE39DE2C34839AB1A4 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extension.swift"; path = "ChartIQ/Extension/UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		A49E1021DBEA7B5F9477F1E9AE2147F9 /* Pods-ChartIQDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5EA5493B129F13A0D4507F9923FF88E /* ChartIQ-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartIQ-umbrella.h"; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		CB8F4665377E355D72C4D9395F48DF65 /* ChartIQ.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChartIQ.modulemap; sourceTree = "<group>"; };
 		CE9E06A4175E66C423D6A1BD46FDE3B0 /* URLSession+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSession+Extension.swift"; path = "ChartIQ/Extension/URLSession+Extension.swift"; sourceTree = "<group>"; };
 		D089F53447CFFEE5C7DDE5EFCC5D4F84 /* Pods-ChartIQDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChartIQDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DD95A07F2419033EDCE355D72567989A /* ChartIQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartIQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD95A07F2419033EDCE355D72567989A /* ChartIQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChartIQ.framework; path = ChartIQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF54CB73027A263D8AA99AD1F1F00057 /* Pods-ChartIQDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChartIQDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		E8781661C2F721B2080C70837AFEFE42 /* Pods-ChartIQDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ChartIQDemo-dummy.m"; sourceTree = "<group>"; };
 		ED1258713C87A912EF6DD3DE210078BE /* Pods-ChartIQDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ChartIQDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +274,7 @@
 				141BCC20989F14F3552FCCCD0AB8ECD2 /* WKWebView+Extension.swift */,
 				5448070240171946E5EBED711755F435 /* Support Files */,
 			);
+			name = ChartIQ;
 			path = ChartIQ;
 			sourceTree = "<group>";
 		};
@@ -409,11 +410,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				TargetAttributes = {
-					D76DFD4793743D0611355522532B6DD6 = {
-						LastSwiftMigration = 1020;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -723,7 +719,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -817,7 +814,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -848,7 +844,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
