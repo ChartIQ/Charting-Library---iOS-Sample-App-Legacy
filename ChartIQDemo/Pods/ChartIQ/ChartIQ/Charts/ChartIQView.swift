@@ -417,7 +417,6 @@ public class ChartIQView: UIView {
     ///
     /// - Parameter method: The data method
     public func setDataMethod(_ method: ChartIQDataMethod) {
-        clear()
         _dataMethod = method
         let script = "determineOs()"
         webView.evaluateJavaScript(script, completionHandler: nil)
@@ -548,7 +547,13 @@ public class ChartIQView: UIView {
     ///   - property: The property name of the object you wish to change
     ///   - value: The value to assign to the property
     public func setChartProperty(_ property: String, value: Any) {
-        let script = "stxx.chart.\(property) = \"\(value)\";"
+        var script = ""
+        if value is String {
+            script = "stxx.chart.\(property) = \"\(value)\";"
+        } else {
+            script = "stxx.chart\(property) = \(value);"
+        }
+
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
@@ -567,7 +572,13 @@ public class ChartIQView: UIView {
     ///   - property: The property name of the object you wish to change
     ///   - value: The value to assign to the property
     public func setEngineProperty(_ property: String, value: Any) {
-        let script = "stxx.\(property) = \"\(value)\";"
+        var script = ""
+        if value is String {
+            script = "stxx.\(property) = \"\(value)\";"
+        } else {
+            script = "stxx.\(property) = \(value);"
+        }
+
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
@@ -1054,6 +1065,13 @@ public class ChartIQView: UIView {
         let jsonString = String(data: jsonData, encoding: .utf8)
         print(jsonString!)
         return jsonString ?? ""
+    }
+    
+    /// Helper to get the current webview
+    ///
+    /// - Returns: the current webview
+    public func getWebView() -> WKWebView {
+        return webView
     }
     
 }

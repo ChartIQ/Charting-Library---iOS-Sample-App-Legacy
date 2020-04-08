@@ -5,7 +5,7 @@ This SDK has been designed to support a [basic application](https://github.com/C
 
 ## Requirements
 
-- A valid version of ChartIQ's charting library (version 7.0.3 or greater). Please contact sales@chartiq.com if you do not already have a license or evaluation version.
+- A valid version of ChartIQ's charting library (version 7.0.5 or greater). Please contact sales@chartiq.com if you do not already have a license or evaluation version.
 
 ## Sample App
 
