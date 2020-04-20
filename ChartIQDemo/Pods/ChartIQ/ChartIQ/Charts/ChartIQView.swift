@@ -551,7 +551,7 @@ public class ChartIQView: UIView {
         if value is String {
             script = "stxx.chart.\(property) = \"\(value)\";"
         } else {
-            script = "stxx.chart\(property) = \(value);"
+            script = "stxx.chart.\(property) = \(value);"
         }
 
         webView.evaluateJavaScript(script, completionHandler: nil)
