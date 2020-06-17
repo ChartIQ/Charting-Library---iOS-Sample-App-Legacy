@@ -1,17 +1,23 @@
 # Charting-Library---iOS-Sample-App
 
-This is a basic iOS application built with ChartIQ's iOS Charting SDK. 
-Both the native SDK and this application are intended to provide guidance on how to implement a native iOS app that interacts with the most common API calls in the [javaScript library](https://documentation.chartiq.com).
+This is a basic iOS application built with ChartIQ's iOS Charting SDK.
+Both the native SDK and this application are intended to provide guidance on how to implement a native iOS app that interacts with the most common API calls in the [JavaScript library](https://documentation.chartiq.com).
+
+**Coming soon:** A new app with a completely redesigned UI and support for version 8.0.0 of the ChartIQ library.
 
 ## About the iOS Charting SDK
 
 The [iOS Charting SDK](https://github.com/ChartIQ/Charting-Library---iOS-SDK) has been designed to support this basic application and may need to be extended to support more elaborate implementations.
-This can be done by adding additional code to invoke Javascript functions directly. 
+This can be done by adding additional code to invoke Javascript functions directly.
 Feel free to contact us and request sample code and guidance on how to extend the SDK.
 
 ## Requirements
 
-- A valid version of ChartIQ's charting library (version 7.0.5 or greater). Please contact sales@chartiq.com if you do not already have a license or evaluation version.
+- Version 7.0.5 to 7.5.0 of the ChartIQ library.
+
+  Support for version 8.0.0 coming soon.
+
+  Please contact sales@chartiq.com if you do not already have a license or evaluation version of the library.
 
 ## Getting started
 
@@ -19,7 +25,7 @@ Instructions for compiling the application and for using the native SDK can be f
 
 [http://documentation.chartiq.com/tutorial-Starting on iOS.html](http://documentation.chartiq.com/tutorial-Starting%20on%20iOS.html)
 
-Open the application in Xcode using xcworkspace file and build. 
+Open the application in Xcode using xcworkspace file and build.
 > Remember the application currently targets an older version of Swift than Xcode prefers. The application will compile but if you would like to update the Swift target you must use Xcode's converter.
 
 ## Questions and support
