@@ -189,9 +189,9 @@ public class ChartIQView: UIView {
         return _dataMethod
     }
     
-    public var dataSource: ChartIQDataSource?
+    weak open var dataSource: ChartIQDataSource?
     
-    public var delegate: ChartIQDelegate?
+    weak open var delegate: ChartIQDelegate?
     
     public var symbol: String {
         return webView.evaluateJavaScriptWithReturn("stxx.chart.symbol") ?? ""
@@ -557,13 +557,12 @@ public class ChartIQView: UIView {
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
-    /// get a property value on the chart
+    /// Get a property value on the chart.
     ///
     /// - Parameters:
-    ///   - property: The property name of the object you wish to receive
-    public func getChartProperty(_ property: String) -> String {
-        let script = "stxx.chart.\(property);"
-        return webView.evaluateJavaScriptWithReturn(script)!
+    ///   - property: The property name of the object you wish to receive.
+    public func getChartProperty(_ property: String) -> String? {
+      return webView.evaluateJavaScriptWithReturn("getChartProperty(\"\(property)\");")
     }
     
     /// Change a property value on the chart engine
@@ -582,13 +581,12 @@ public class ChartIQView: UIView {
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     
-    // get a property value on the chart engine
+    /// Get a property value on the chart engine.
     ///
     /// - Parameters:
-    ///   - property: The property name of the object you wish to receive
-    public func getEngineProperty(_ property: String) -> String {
-        let script = "stxx.\(property);"
-        return webView.evaluateJavaScriptWithReturn(script)!
+    ///   - property: The property name of the object you wish to receive.
+    public func getEngineProperty(_ property: String) -> String? {
+      return webView.evaluateJavaScriptWithReturn("getEngineProperty(\"\(property)\");")
     }
     
     /// Turns crosshairs on
