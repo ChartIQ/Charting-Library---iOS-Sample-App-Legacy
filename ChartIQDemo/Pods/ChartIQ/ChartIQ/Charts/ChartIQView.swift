@@ -504,7 +504,7 @@ public class ChartIQView: UIView {
     ///   - symbol: The symbol for the new chart - a symbol string
     ///   - color: Color to draw line
     public func addComparisonSymbol(_ symbol: String, color: UIColor = UIColor.red) {
-        let addSeriesScript = "stxx.addSeries(\"\(symbol)\", {display:\"\(symbol)\", color: \"\(color.toHexString())\"  isComparison:true});"
+        let addSeriesScript = "stxx.addSeries(\"\(symbol)\", {display:\"\(symbol)\", color: \"\(color.toHexString())\", isComparison:true});"
 
         webView.evaluateJavaScript(addSeriesScript, completionHandler: nil)
     }
