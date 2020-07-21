@@ -1,7 +1,6 @@
 # Charting-Library---iOS-Sample-App
 
-This is a basic iOS application built with ChartIQ's iOS Charting SDK.
-Both the native SDK and this application are intended to provide guidance on how to implement a native iOS app that interacts with the most common API calls in the [JavaScript library](https://documentation.chartiq.com).
+This is a basic iOS application built with ChartIQ's iOS Charting SDK. Both the native SDK and this application are intended to provide guidance on how to implement a native iOS app that interacts with the most common API calls in the [JavaScript library](https://documentation.chartiq.com).
 
 **Coming soon:** A new app with a completely redesigned UI and support for version 8.0.0 of the ChartIQ library.
 
@@ -17,7 +16,7 @@ Feel free to contact us and request sample code and guidance on how to extend th
 
   Support for version 8.0.0 coming soon.
 
-  Please contact sales@chartiq.com if you do not already have a license or evaluation version of the library.
+  Please contact info@cosaic.io if you do not already have a license or evaluation version of the library.
 
 ## Getting started
 
