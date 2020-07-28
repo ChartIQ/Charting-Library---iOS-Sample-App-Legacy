@@ -352,7 +352,7 @@
 				TargetAttributes = {
 					7AFE81561E41E6D1007C7A7A = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = N2JLYEUWDM;
+						DevelopmentTeam = FVNSQ9RW47;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -698,7 +698,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2JLYEUWDM;
+				DEVELOPMENT_TEAM = FVNSQ9RW47;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChartIQDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -721,7 +721,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2JLYEUWDM;
+				DEVELOPMENT_TEAM = FVNSQ9RW47;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChartIQDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
