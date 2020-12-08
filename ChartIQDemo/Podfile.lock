@@ -1,16 +1,16 @@
 PODS:
-  - ChartIQ (3.3.1)
+  - ChartIQ (3.3.3)
 
 DEPENDENCIES:
-  - ChartIQ (= 3.3.1)
+  - ChartIQ (= 3.3.3)
 
 SPEC REPOS:
   trunk:
     - ChartIQ
 
 SPEC CHECKSUMS:
-  ChartIQ: 52497eded6dcac3dc1c04f40ba6686d67ae7f162
+  ChartIQ: 2b65cfa84371b2c5e645f0b17727b3b9abcd00b2
 
-PODFILE CHECKSUM: 1dd5e123ab886daea0baeb537f8617751dec99dd
+PODFILE CHECKSUM: 3a15cd2acc2f8d6b286930763a4c74f4df15ef86
 
 COCOAPODS: 1.8.4

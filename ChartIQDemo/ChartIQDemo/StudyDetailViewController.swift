@@ -24,9 +24,13 @@ class StudyDetailViewController: UITableViewController {
         case color = "color"
         case text = "text"
         case colorText = "colorText"
+        case date = "date"
+        case time = "time"
         
         var cellIdentifier: String {
             switch self {
+            case .date: return "StudyValueTableCell"
+            case .time: return "StudyValueTableCell"
             case .select: return "StudyListTableCell"
             case .number: return "StudyValueTableCell"
             case .text: return "StudyValueTableCell"
@@ -241,7 +245,7 @@ class StudyDetailViewController: UITableViewController {
         switch optionType {
         case .select:
             cell.labels?[1].text = (parameter["value"] as? String)?.capitalized ?? ""
-        case .number, .text:
+        case .number, .text, .date, .time:
             cell.textFields![0].keyboardType = optionType == .number ? .numberPad : .default
             cell.textFields?[0].text = optionType == .number ? String(parameter["value"] as? Float ?? 0) : parameter["value"] as? String ?? ""
             cell.textFieldValueDidEndEditingBlock = {[weak self] (cell, textField) in
