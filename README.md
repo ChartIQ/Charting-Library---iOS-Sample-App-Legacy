@@ -4,7 +4,7 @@ This is a basic iOS application built with ChartIQ's iOS charting SDK. Both the 
 
 **End of support**
 
-Support for this app and the [Charting-Library---iOS-SDK-Legacy](https://github.com/ChartIQ/Charting-Library---iOS-SDK-Legacy) project ended as of Version 8.2.0 of the ChartIQ library. Please see the app in the [ChartIQ-iOS-SDK](https://github.com/ChartIQ/ChartIQ-iOS-SDK) instead.
+Support for this app and the [Charting-Library---iOS-SDK-Legacy](https://github.com/ChartIQ/Charting-Library---iOS-SDK-Legacy) project ended as of Version 8.0.0 of the ChartIQ library. Please see the app in the [ChartIQ-iOS-SDK](https://github.com/ChartIQ/ChartIQ-iOS-SDK) instead.
 
 ## Requirements
 
