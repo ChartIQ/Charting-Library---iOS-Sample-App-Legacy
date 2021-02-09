@@ -12,14 +12,18 @@ Version 7.0.5 to 7.5.0 of the ChartIQ library.
 
 ## Getting started
 
-See the [Getting Started on Mobile: iOS](http://documentation.chartiq.com/tutorial-Starting%20on%20iOS.html) tutorial for instructions on compiling the application and using the native SDK.
+See the [Starting on Mobile: iOS - Legacy](https://documentation.chartiq.com/tutorial-Starting%20on%20iOS%20-%20Legacy.html) tutorial for instructions on compiling the application and using the native SDK.
 
 Open the application in Xcode using the *xcworkspace* file and build.
 
 **Note:** The application currently targets an older version of Swift than Xcode prefers. The application will compile, but if you would like to update the Swift target, you must use Xcode's converter.
 
+## API documentation
+
+- [App/SDK](https://chartiq.readme.io/docs)
+
+- [ChartIQ JavaScript library](https://documentation.chartiq.com)
+
 ## Questions and support
 
 Contact our development support team at <support@chartiq.com>.
-
-See our JavaScript documentation at https://documentation.chartiq.com.
