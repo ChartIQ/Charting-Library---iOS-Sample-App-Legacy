@@ -12,7 +12,7 @@ Version 7.0.5 to 7.5.0 of the ChartIQ library.
 
 ## Getting started
 
-See the [Starting on Mobile: iOS - Legacy](https://documentation.chartiq.com/tutorial-Starting%20on%20iOS%20-%20Legacy.html) tutorial for instructions on compiling the application and using the native SDK.
+See the [Getting Started on Mobile: iOS - Legacy](https://documentation.chartiq.com/tutorial-Starting%20on%20iOS%20-%20Legacy.html) tutorial for instructions on compiling the application and using the native SDK.
 
 Open the application in Xcode using the *xcworkspace* file and build.
 
