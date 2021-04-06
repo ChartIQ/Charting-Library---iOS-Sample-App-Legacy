@@ -762,13 +762,14 @@ public class ChartIQView: UIView {
             "var helper = new CIQ.Studies.DialogHelper({sd:selectedSd,stx:stxx}); " +
             "var isFound = false; " +
             "var newInputParameters = {}; " +
-            "var newOutputParameters = {}; "
+            "var newOutputParameters = {}; " +
+            "var newParameterParameters = {}; "
     
         parameters.forEach { (parameter) in
             script += getUpdateStudyParametersScript(parameter: parameter.key, value: parameter.value)
         }
         
-        script += "helper.updateStudy({inputs:newInputParameters, outputs:newOutputParameters}); "
+        script += "helper.updateStudy({inputs:newInputParameters, outputs:newOutputParameters, parameters: newParameterParameters}); "
         
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
@@ -1020,8 +1021,16 @@ public class ChartIQView: UIView {
             "   for (x in helper.outputs) { " +
             "       var output = helper.outputs[x]; " +
             "       if (output[\"name\"] === \"\(parameter)\") { " +
+            "           isFound = true; " +
             "           newOutputParameters[\"\(parameter)\"] = \"\(value)\"; " +
             "       } " +
+            "   } " +
+            "} " +
+            "if (isFound == false) { " +
+            "   if ( \"\(parameter)\" === \"studyOverBoughtValue\" || \"\(parameter)\" === \"studyOverSoldValue\" ) {" +
+            "       newParameterParameters[\"\(parameter)\"] = parseFloat(\"\(value)\"); " +
+            "   }else{" +
+            "       newParameterParameters[\"\(parameter)\"] = \"\(value)\"; " +
             "   } " +
             "} " +
             "isFound = false;"
