@@ -20,7 +20,7 @@ Open the application in Xcode using the *xcworkspace* file and build.
 
 ## API documentation
 
-- [App/SDK](https://chartiq.readme.io/docs)
+- [App/SDK](https://documentation.chartiq.com/chartiq.legacy.mobile/docs.html)
 
 - [ChartIQ JavaScript library](https://documentation.chartiq.com)
 
